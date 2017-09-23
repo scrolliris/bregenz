@@ -1,0 +1,36 @@
+@import './shared/_colour.styl'
+@import './shared/_article.styl'
+
+.options
+  .item.disabled
+    svg
+      use.icon
+        fill lightgray
+
+article
+  margin-top 0
+  padding-top 0
+
+  .extra.info
+    padding 1.38rem 0 3.01rem 0
+    margin 0
+    .link,
+    .badge
+      width 50%
+      min-height 1.6rem
+
+    .link
+      float left
+      display inline-block
+      padding-top 0.382rem
+
+    .badge
+      float right
+      padding-right 1.06rem
+      margin 0
+      text-align right
+
+  .outline
+    margin 2.24rem 0 1.2rem 0
+
+  article-components()

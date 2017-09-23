@@ -1,0 +1,55 @@
+@require './shared/_colour.styl'
+
+// global
+*
+  box-sizing border-box !important
+
+#application
+  main
+    margin 0 0 9rem 0
+
+    .nav
+      color $gray2
+      border-bottom 1px solid darken($gray0, 10%)
+
+      .options, .actions
+        .item
+          color $gray2
+        .item.disabled
+          color $gray0
+        .divider
+          display inline-block
+          margin 0 0.58rem
+
+    .breadcrumb
+      margin-left -0.74rem
+      padding 0 1.87rem
+      min-height 1.66rem
+      line-height 1.42rem
+      font-size 1.09em
+      a
+        color $gray2
+      i
+        color lightgray
+      span
+        font-weight normal
+
+  footer
+    > .segment
+      padding 5em 0
+
+.header
+  margin 0
+  min-height 5.22rem
+  padding 0.788rem 1.09rem 0 1.16rem
+  border none
+  background lighten(lightgray, 64%)
+  box-shadow none
+  img.logo
+    float left
+    display inline-block
+  h1.logo-type
+    float left
+    margin 1.11rem 0.31rem 1.31rem 1.58rem
+    color gray
+    display inline-block
