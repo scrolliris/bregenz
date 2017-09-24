@@ -14,18 +14,18 @@ def usage(argv):
     """
     cmd = os.path.basename(argv[0])
     print('usage: %s <config_uri> [var=value]\n'
-          '(example: "%s {development|production}.ini")' % (cmd, cmd))
+          '(example: "%s {staging|production}.ini")' % (cmd, cmd))
     sys.exit(1)
 
 
-def main(argv):
+def main(argv, _quiet=False):
     """Starts main production server process
     """
     if len(argv) < 2:
         usage(argv)
 
     config_uri = argv[1] if 1 in argv else 'config/production.ini'
-    wsgi_app = get_app(config_uri)
+    wsgi_app = get_app(config_uri, 'bregenz')
     setup_logging(config_uri)
 
     return wsgi_app
