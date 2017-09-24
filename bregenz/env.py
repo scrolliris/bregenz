@@ -34,7 +34,7 @@ class Env():
                 os.environ[v] = env_v
 
     @classmethod
-    def settings_mappings(cls) -> dict:
+    def settings_mappings(cls):  # type (Env) -> dict
         return {
             # Note: these values are updated if exist but not empty
             'domain': 'DOMAIN',

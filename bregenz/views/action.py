@@ -1,19 +1,31 @@
 """View action for article
 """
-from datetime import datetime, timezone
+from datetime import datetime
 from os import path
+
+# timezone
+import sys
 import yaml
 
+# pylint: disable=no-name-in-module, ungrouped-imports
+if sys.version_info[0] < 3:
+    import pytz as timezone
+else:
+    from datetime import timezone
+# pylint: enable=no-name-in-module, ungrouped-imports
+
+# pylint: disable=wrong-import-position
 import bleach
 import markdown
 from pyramid.view import view_config
 
 from bregenz.views import tpl
 
-def render_content(article_path) -> 'function':
+
+def render_content(article_path):  # type (str) -> 'function'
     """Return a funciton to parse article content in yaml
     """
-    def _content() -> dict:
+    def _content():  # type () -> dict
         if path.isfile(article_path):
             with open(article_path, 'r') as f:
                 try:

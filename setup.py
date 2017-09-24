@@ -3,6 +3,7 @@
 """
 
 import os
+import sys
 
 from setuptools import setup, find_packages
 
@@ -30,7 +31,15 @@ requires = [
     'wsgi-basic-auth',
 ]
 
+if sys.version_info[0] < 3:  # python 2.7
+    requires.extend([
+        'ipaddress',
+        'typing',
+        'pytz',
+    ])
+
 development_requires = [
+    'better_exceptions',
     'flake8',
     'flake8_docstrings',
     'pylint',
@@ -38,8 +47,10 @@ development_requires = [
 ]
 
 testing_requires = [
+    'better_exceptions',
     'pytest',
     'pytest-cov',
+    'pytest-mock',
     'WebTest',
 ]
 

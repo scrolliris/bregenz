@@ -24,14 +24,14 @@ def add_template_util_renderer_globals(evt):
     evt['clean'] = clean
 
 
-def clean(**kwargs) -> 'function':
+def clean(**kwargs):  # type (dict) -> 'function'
     """Returns sanitized value except allowed tags and attributes
 
     >>> ${'<a href="/"><em>link</em></a>'|n,clean(
             tags=['a'], attributes=['href'])}
     "<a href="/">link</a>"
     """
-    def __clean(text) -> Markup:
+    def __clean(text):  # type (str) -> Markup
         return Markup(_clean(text, **kwargs))
 
     return __clean
