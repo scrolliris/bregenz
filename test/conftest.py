@@ -89,7 +89,7 @@ def config(request, settings):
     #    in unittest.
     # config.include('pyramid_mako')
 
-    from pyramid.events import BeforeRender, NewRequest
+    from pyramid.events import BeforeRender
     from bregenz.utils.template import add_template_util_renderer_globals
 
     config.add_subscriber(add_template_util_renderer_globals, BeforeRender)

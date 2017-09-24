@@ -42,7 +42,6 @@ class Env():
             'wsgi.auth_credentials': 'WSGI_AUTH_CREDENTIALS',
         }
 
-
     def get(self, key, default=None):
         return os.environ.get(key, default)
 

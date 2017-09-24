@@ -1,9 +1,9 @@
 """View action package
 """
-from typing import Union, List
+from typing import Union, List  # noqa
 
-from pyramid.config import Configurator
-from pyramid.request import Request
+from pyramid.config import Configurator  # noqa
+from pyramid.request import Request  # noqa
 
 
 def tpl(path, namespace=None):  # type (str, List[str, None]) -> str

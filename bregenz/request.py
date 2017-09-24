@@ -55,7 +55,6 @@ class CustomRequest(Request):
         else:
             super(Request, self).__init__(*new_args, **kwargs)
 
-
     @property
     def settings(self):
         from bregenz import get_settings

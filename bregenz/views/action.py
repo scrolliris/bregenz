@@ -30,7 +30,7 @@ def render_content(article_path):  # type (str) -> 'function'
             with open(article_path, 'r') as f:
                 try:
                     content = yaml.load(f)
-                except yaml.YAMLError as _e:
+                except yaml.YAMLError:
                     content = ''
         else:
             content = ''

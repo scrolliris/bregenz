@@ -33,7 +33,7 @@ def test_view_index_view_date_timezone(dummy_request, mocker):
 
     from bregenz.views.action import index
     res = index(dummy_request)
-    assert str == type(res['view_date'])
+    assert isinstance(res['view_date'], str)
     # it must be in UTC
     assert '2017-07-07T09:09:09+00:00' == res['view_date']
 
@@ -44,4 +44,4 @@ def test_view_index(dummy_request):
     from bregenz.views.action import index
 
     res = index(dummy_request)
-    assert dict == type(res)
+    assert isinstance(res, dict)
