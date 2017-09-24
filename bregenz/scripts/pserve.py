@@ -8,8 +8,8 @@ from bregenz.env import Env
 def main(argv=None, quiet=False):
     """Run original pserve with .env support
     """
-    # `pserve` (PServeCommand) needs `hupper`, `hupper` has dependency **fcntl**.
-    # In some environment (e.g. app engine), fcntl is not found :'(
+    # `pserve` (PServeCommand) needs `hupper`, `hupper` has dependency
+    # **fcntl**. In some environment (e.g. app engine), fcntl is not found :'(
     from pyramid.scripts.pserve import PServeCommand
 
     if not argv:
