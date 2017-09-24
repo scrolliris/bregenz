@@ -3,8 +3,8 @@ bleach==2.0.0
 markdown==2.6.8
 Paste==2.0.3
 PasteScript==2.0.2
-pylibmc==1.5.2
 python-dotenv==0.6.0
+python-memcached==1.58
 pyramid==1.9.1
 pyramid_assetviews==1.0a3
 pyramid-beaker==0.8
