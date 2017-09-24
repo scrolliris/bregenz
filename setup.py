@@ -14,11 +14,8 @@ with open(os.path.join(here, 'CHANGELOG')) as f:
     CHANGES = f.read()
 
 requires = [
-    'bcrypt',
     'bleach',
-    'boto3',
     'colorlog',
-    'itsdangerous',
     'markdown',
     'Paste',
     'PasteScript',

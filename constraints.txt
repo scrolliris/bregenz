@@ -1,6 +1,4 @@
-bcrypt==3.1.2
 bleach==2.0.0
-itsdengerous==0.24
 markdown==2.6.8
 Paste==2.0.3
 PasteScript==2.0.2
