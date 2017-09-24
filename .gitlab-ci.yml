@@ -1,0 +1,109 @@
+stages:
+  - build
+  - check27
+  - check
+  - test27
+  - test
+
+build:
+  stage: build
+  image: node:7.10.1
+  variables:
+    NODE_ENV: production
+  before_script:
+    - npm install npm@5.4.2
+    - node --version
+    - node_modules/.bin/npm --version
+    - node_modules/.bin/npm install --ignore-scripts
+  script:
+    - node_modules/.bin/gulp
+  cache:
+    untracked: true
+    paths:
+      - node_modules
+  except:
+    - tags
+
+check27:
+  stage: check27
+  image: python:2.7.13
+  variables:
+    ENV: development
+    PIP_CACHE_DIR: pip-cache
+  before_script:
+    - python --version
+    - pip --version
+    - pip install --upgrade pip setuptools
+  script:
+    - make clean
+    - make setup
+    - make check
+  cache:
+    untracked: true
+    paths:
+      - pip-cache
+  except:
+    - tags
+
+check:
+  stage: check
+  image: python:3.5.4
+  variables:
+    ENV: development
+    PIP_CACHE_DIR: pip-cache
+  before_script:
+    - python --version
+    - pip --version
+    - pip install --upgrade pip setuptools
+  script:
+    - make clean
+    - make setup
+    - make check
+  cache:
+    untracked: true
+    paths:
+      - pip-cache
+  except:
+    - tags
+
+test27:
+  stage: test27
+  image: python:2.7.13
+  variables:
+    ENV: test
+    PIP_CACHE_DIR: pip-cache
+  before_script:
+    - python --version
+    - pip --version
+    - pip install --upgrade pip setuptools
+  script:
+    - make clean
+    - make setup
+    - make coverage
+  cache:
+    untracked: true
+    paths:
+      - pip-cache
+  except:
+    - tags
+
+test:
+  stage: test
+  image: python:3.5.4
+  variables:
+    ENV: test
+    PIP_CACHE_DIR: pip-cache
+  before_script:
+    - python --version
+    - pip --version
+    - pip install --upgrade pip setuptools
+  script:
+    - make clean
+    - make setup
+    - make coverage
+  cache:
+    untracked: true
+    paths:
+      - pip-cache
+  except:
+    - tags
