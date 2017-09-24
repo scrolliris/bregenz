@@ -38,6 +38,7 @@ class Env():
         return {
             # Note: these values are updated if exist but not empty
             'domain': 'DOMAIN',
+            'session.type': 'SESSION_TYPE',
             'session.secret': 'SESSION_SECRET',
             'session.key': 'SESSION_KEY',
             'session.url': 'SESSION_URL',

@@ -21,7 +21,6 @@ requires = [
     'Paste',
     'PasteScript',
     'python-dotenv',
-    'python-memcached',
     'pyramid',
     'pyramid_assetviews',
     'pyramid_beaker',
@@ -39,6 +38,7 @@ if sys.version_info[0] < 3:  # python 2.7
     ])
 
 development_requires = [
+    'pylibmc',
     'better_exceptions',
     'flake8',
     'flake8_docstrings',
@@ -47,6 +47,7 @@ development_requires = [
 ]
 
 testing_requires = [
+    'memcache',
     'better_exceptions',
     'pytest',
     'pytest-cov',
