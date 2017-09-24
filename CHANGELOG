@@ -1,2 +1,5 @@
+24 09 2017 Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>
+ * Add python 2.7 support
+
 23 09 2017 Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>
  * Initial commit
