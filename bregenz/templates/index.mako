@@ -36,8 +36,21 @@
 
   <div class="row">
     <div class="offset-3 column-10">
+      <%block name='announcement'>
+      <%
+        msg = (req.session.pop_flash('announcement') or [None])[0]
+      %>
+      % if msg:
+        <div class="warning message" role="alert">
+          <div class="header">NOTICE</div>
+          <p>${msg}</p>
+        </div>
+      % endif
+      </%block>
+
       <%def name="render_article()">
         <% content = render_content() %>
+
         <article>
           <div class="extra info">
             <div class="link">

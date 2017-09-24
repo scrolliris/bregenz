@@ -38,6 +38,12 @@ class Env():
         return {
             # Note: these values are updated if exist but not empty
             'domain': 'DOMAIN',
+            'session.secret': 'SESSION_SECRET',
+            'session.key': 'SESSION_KEY',
+            'session.url': 'SESSION_URL',
+            'session.username': 'SESSION_USERNAME',
+            'session.password': 'SESSION_PASSWORD',
+            'session.cookie_domain': 'SESSION_COOKIE_DOMAIN',
             'wsgi.url_scheme': 'WSGI_URL_SCHEME',
             'wsgi.auth_credentials': 'WSGI_AUTH_CREDENTIALS',
         }

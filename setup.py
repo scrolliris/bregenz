@@ -14,14 +14,17 @@ with open(os.path.join(here, 'CHANGELOG')) as f:
     CHANGES = f.read()
 
 requires = [
+    'beaker',
     'bleach',
     'colorlog',
     'markdown',
     'Paste',
     'PasteScript',
+    'pylibmc',
     'python-dotenv',
     'pyramid',
     'pyramid_assetviews',
+    'pyramid_beaker',
     'pyramid_mako',
     'PyYAML',
     'webob',

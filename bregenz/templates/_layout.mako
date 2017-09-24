@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="${req.util.built_asset_url('master.css')}">
   </head>
   <body id="application">
-    <div class="header">
+    <div class="global-header">
       <div class="sixteen wide column">
         <a href="https://try.scrolliris.com/"><img class="logo" width="48" height="48" src="${util.built_asset_url('img/scrolliris-logo-64x64.png')}"></a>
         <h1 class="logo-type">Try! Scrolliris</h1><br>

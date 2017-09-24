@@ -87,7 +87,13 @@ def config(request, settings):
     # FIXME:
     #    these includings from .ini file are not evaluated
     #    in unittest.
-    # config.include('pyramid_mako')
+    config.include('pyramid_assetviews')
+    config.include('pyramid_beaker')
+    config.include('pyramid_mako')
+
+    config.include('bregenz.views')
+
+    config.include('bregenz.route')
 
     from pyramid.events import BeforeRender
     from bregenz.utils.template import add_template_util_renderer_globals
