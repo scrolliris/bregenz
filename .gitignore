@@ -1,6 +1,5 @@
-__pycache__/
-
-*.egg-info/
+__pycache__
+*.egg-info
 *.egg
 *.pyc
 
@@ -12,21 +11,25 @@ __pycache__/
 .env.ci
 .coverage
 
-doc/**/*.yml
+app.yaml
+/*_config.py
+/wsgi.py
 
-bin/deliver
-bin/gitlab-ci-multi-runner
+runtime.txt
 
-locale/**/*.mo
-lib/**/*
+/bin/deliver
+/bin/gitlab-ci-multi-runner
 
-venv*
-node_modules
+/doc/**/*.yml
+/static/*
+!/static/**/*/.gitignore
+/lib/*
+/vendor
 
-static/*
-!static/**/*.gitignore
+/tmp/log/*
+/tmp/build/*
+/tmp/_cache/*
+!/tmp/**/.gitignore
 
-tmp/log/*
-tmp/build/*
-tmp/_cache/*
-!tmp/**/.gitignore
+/venv*
+/node_modules
