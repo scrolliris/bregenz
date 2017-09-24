@@ -10,6 +10,8 @@ from bregenz.env import Env
 def main(argv=None, quiet=False):
     """Run original pserve with .env support
     """
+    # `pserve` uses `hupper`, `hupper` has dependency **fcntl**.
+    # In some environment (e.g. app engine), fcntl is not found :'(
     if not argv:
         argv = sys.argv
 
