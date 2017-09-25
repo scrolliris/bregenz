@@ -16,7 +16,6 @@ with open(os.path.join(here, 'CHANGELOG')) as f:
 requires = [
     'beaker',
     'bleach',
-    'colorlog',
     'markdown',
     'Paste',
     'PasteScript',
@@ -38,17 +37,24 @@ if sys.version_info[0] < 3:  # python 2.7
     ])
 
 development_requires = [
-    'pylibmc',
+    'colorlog',
     'better_exceptions',
     'flake8',
     'flake8_docstrings',
     'pylint',
+
+    'pylibmc',
     'waitress',
 ]
 
 testing_requires = [
-    'python-memcached',
+    'colorlog',
     'better_exceptions',
+    'flake8',
+    'flake8_docstrings',
+    'pylint',
+
+    'python-memcached',
     'pytest',
     'pytest-cov',
     'pytest-mock',
