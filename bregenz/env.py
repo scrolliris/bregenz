@@ -45,6 +45,9 @@ class Env():
             'session.username': 'SESSION_USERNAME',
             'session.password': 'SESSION_PASSWORD',
             'session.cookie_domain': 'SESSION_COOKIE_DOMAIN',
+            'ssl_suggestion.flash_message': 'SSL_SUGGESTION_FLASH_MESSAGE',
+            'ssl_suggestion.hsts_header': 'SSL_SUGGESTION_HSTS_HEADER',
+            'ssl_suggestion.proto_header': 'SSL_SUGGESTION_PROTO_HEADER',
             'wsgi.url_scheme': 'WSGI_URL_SCHEME',
             'wsgi.auth_credentials': 'WSGI_AUTH_CREDENTIALS',
         }

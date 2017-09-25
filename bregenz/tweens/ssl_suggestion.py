@@ -4,41 +4,69 @@ import logging
 from bregenz.utils.localization import get_translator_function
 
 
+def config_get(registry):
+    s = registry.settings
+
+    def _get_config(key, default):
+        return ast.literal_eval(
+            s.get('ssl_suggestion.{}'.format(key), default))
+
+    return _get_config
+
+
+def set_flash_message(req, key='ssl.suggestion.message', queue='announcement'):
+    _ = get_translator_function(req.localizer)
+    req.session.flash(_(key), queue=queue, allow_duplicate=False)
+    return req
+
+
+def set_hsts_header(res):
+    # Sets HSTS Policy
+    # about preload, see https://hstspreload.org/
+    # see details below:
+    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/\
+    #   Strict-Transport-Security#Preloading_Strict_Transport_Security
+    age = 31536000  # seconds (one year)
+    hsts_policy = 'max-age={0}; includeSubDomains'.format(age)
+    res.headers['Strict-Transport-Security'] = hsts_policy
+    return res
+
+
 def tween_factory(handler, registry):
     """This tween suggests does not redirect by itself, suggests new url with
     ssl via flash message instead
     """
-    s = registry.settings
-    ssl_suggestion = ast.literal_eval(s.get('ssl_suggestion', 'False'))
+    get_config = config_get(registry)
 
-    def ssl_suggestion_tween(request):
+    hsts_header = get_config('hsts_header', 'False')
+    flash_message = get_config('flash_message', 'False')
+    proto_header = get_config('proto_header', None)
+
+    def ssl_suggestion_tween(req):
+        """Handles request with ssl checker and suggestions
+        """
         criteria = [
-            request.headers.get('X-FORWARDED-PROTO', 'http') == 'https',
-            request.url.startswith('https://'),
+            req.url.startswith('https://'),
+            (not req.path.startswith('/assets/')),
         ]
-        if all(criteria) or not ssl_suggestion:
-            return handler(request)
+        if proto_header:
+            criteria.append(
+                req.headers.get(proto_header, 'http') == 'https')
+
+        if all(criteria) or not (hsts_header or flash_message):
+            return handler(req)
         else:
-            request_to_assets = request.path.startswith('/assets/')
-            if not request_to_assets:
-                _ = get_translator_function(request.localizer)
-                request.session.flash(_('ssl.suggestion.message'),
-                                      queue='announcement',
-                                      allow_duplicate=False)
+            if flash_message:
+                req = set_flash_message(req)
 
-            response = handler(request)
+            res = handler(req)
 
-            # Sets HSTS Policy
-            # about preload, see https://hstspreload.org/
-            # see details below:
-            # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/\
-            #   Strict-Transport-Security#Preloading_Strict_Transport_Security
-            age = 31536000  # seconds (one year)
-            hsts_policy = 'max-age={0}; includeSubDomains'.format(age)
-            response.headers['Strict-Transport-Security'] = hsts_policy
+            if hsts_header:
+                res = set_hsts_header(res)
 
-            if not request_to_assets:
-                logger = logging.getLogger(__name__)
-                logger.info('[INSECURE] requst.url: %s', request.url)
-            return response
+            logger = logging.getLogger(__name__)
+            logger.info('[INSECURE] requst.url: %s', req.url)
+
+            return res
+
     return ssl_suggestion_tween
