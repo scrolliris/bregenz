@@ -1,4 +1,3 @@
-import ast
 import logging
 
 from bregenz.utils.localization import get_translator_function
@@ -8,8 +7,13 @@ def config_get(registry):
     s = registry.settings
 
     def _get_config(key, default):
-        return ast.literal_eval(
-            s.get('ssl_suggestion.{}'.format(key), default))
+        v = str(s.get('ssl_suggestion.{}'.format(key), default))
+        if v.lower() == 'true':
+            return True
+        elif v.lower() == 'false':
+            return False
+
+        return v
 
     return _get_config
 
