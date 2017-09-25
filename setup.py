@@ -47,7 +47,7 @@ development_requires = [
 ]
 
 testing_requires = [
-    'memcache',
+    'python-memcached',
     'better_exceptions',
     'pytest',
     'pytest-cov',
