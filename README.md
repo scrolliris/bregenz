@@ -27,13 +27,13 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 
 * Python `3.5.4` (or `>= 2.7.13`)
 * Node.js `7.10.1` (npm `5.4.2`, for build assets)
+* [Konstanz](https://gitlab.com/lupine-software/konstanz) as git subtree
 
 
 ## Integrations
 
-* GitLab
-* Twitter
 * Typekit
+* Scrolliris (badge)
 
 
 ## Setup
@@ -52,6 +52,27 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 (venv) % npm install --global npm@5.4.2
 (venv) % npm --version
 5.4.2
+```
+
+### Dependencies
+
+#### Konstanz
+
+See article project [Konstanz](
+https://gitlab.com/lupine-software/konstanz).
+
+Don't commit directly the changes on above article project into this repo.
+
+```zsh
+: setup `doc`
+% git remote add konstanz https://gitlab.com/lupine-software/konstanz.git
+% git subtree add --prefix doc/article master
+
+: synchronize with updates into specified branch
+% git pull -s subtree -Xsubtree=doc/article konstanz master
+
+: subtree list
+% git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq
 ```
 
 
