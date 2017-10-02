@@ -1,0 +1,117 @@
+---
+title: Scrolliris Concept Draft
+subtitle: Why we develop Scrolliris
+outline: >-
+  This is a public sample document using the product itself as a concept draft document. Scrolliris is a publication platform which utilizes text readability analysis through a browser widget. This demo shows how it works, using the application on the concept draft document of Scrolliris itself. The pop-up window at bottom left shows the results of the analysis in real time as a text readability heatmap.
+license: CC-BY-NC-SA-4.0
+copyright: 2017 Lupine Software LLC
+authors:
+  - Yasuhiro Asaka (grauwoelfchen)
+body: |+
+  ## TL;DR
+
+  We are currently working on a public BETA version of [Scrolliris](https://scrolliris.com/).
+  Please give us feedback. thanks! Happy Scrolling!
+
+  ## Why we developing Scrolliris
+
+  ### Our motivation
+
+  Writing text that is easy to read is actually quite difficult. Usually, we proceed by trial and error to make our texts more readable for other people, and to learn how we can better express our thoughts and ideas.
+
+  There are a number of commonly used structures and phrases, but they do not always apply to the thought that we want to express, and there is no perfect solution that is's absolutely correct. Sometimes grammatical inaccuracies are overlooked to use a beautiful phrase or an expressive wording that can move people's mind.
+
+  We realised that the process of building sentences and writing texts is based too strongly on feeling and is not pragmatic enough. So, we came up with the idea to provide a tool that gives the author feedback about which part of their text is read eagerly, casually, or skipped altogether. We also wanted to make it as easy to understand as possible.
+
+  We encourage authors to write longer texts on the web.
+
+  ## What's "Good"
+
+  There are many beautiful texts on the web that are great, but do not attract many people. Technical specialist texts or difficult academic papers are good examples.
+  They address a specialist audience and are not easily understood out of context.
+
+  Since a text for a specialized readership cannot be expected to get a lot of readers, access statistics do not adequately represent the quality of the text and its contents.
+  We want to support authors of valuable specialized texts in improving their writing using more appropriate metrics like finisher statistics and intensity of reading as described below.
+  This will enable people to concentrate on how to best express their idea, experience or opinion without getting discouraged by irrelevant popularity measures like the number of clicks received.
+
+  Text can be read in 3 minutes, but cannot be written in 3 minutes. And, anybody cannot decide what is good or not good. Even if people have different thoughts or senses of value, or have completely different opinions, we people, can recognize the beauty and the ingenuity of its expression.
+  Scrolliris is not about whether a text as  a whole is "good" or "bad", we leave this judgement to the subjective opinion of the readers. Our goal is to provide the author feedback on which parts of their text receives the most attention.
+
+  ## The need for better user statistics
+
+  There are many content management systems, many texts and articles in blogs and news, or as Ebook, are published every day.
+
+  Everybody knows how many groundless rumors and fake news are generated on the web every minute. We are bored with this spam that floods us with noise only to grab our attention. All these spam texts only exist to maximise clicks or Page Views (PV) and they end up making the internet a rather boring place.
+
+  We think that the focus on PV is really one of the main reasons that the internet is getting flooded with spam. Since the visibility of content and advertisement revenue depends so much on PV, there is a strong incentive to produce "click bait", interesting-looking links that turn out to be devoid of information. This situation comes from the historical fact that PV has been the only objective way for content providers to measure the user's attention and reaction to web content. In other words, the lack of other objective and general indicators led to the situation we see today. With Scrolliris, we introduce such objective indicators in a measurement mechanism that lets the author know not just how often their text has been accessed, but how intently it is being read.
+
+  ## Be anonymous, not social
+
+  More and more websites provide options to interact with Social Networking Services (SNS), including, for example, microblogging and blog services with SNS function. In social networks, we can make friends that we could not meet offline, and we can keep in contact with the people we know. We think that social networks are not the best place to read and write demanding and content-rich texts. Social networks can form echo chambers, which lack objectivity due to the confirmation bias of its members, and they contain many distracting elements that impede reading. All this does not make for a good environment for serious reading and writing. Social networks are not primarily about text, but about people engaged in social things like showing off, sharing experiences, and building relationships.
+
+  Scrolliris is not a social networking service. We are not about relationship between people. We are about text. Is it easy to read? Does it let you share the thoughts of the author? We produce answers to these questions based on actual data.
+
+  ## How do we do it
+
+  ### Mechanism
+
+  We measure the speed of reading and the visible range by recording touch and scroll events for a text that is displayed in a browser or on a mobile device. By statistical processing we make the data easy to analyse, and provide feedback to the author on reading intensity and degree of perusal reading that could not be easily visualized so far.
+
+  The principle of this measurement is not a special new technology. Some similar mechanisms are sometimes used for advertisements as well. However, instead of focusing on a purpose for general web pages, we are specializing in measuring how text is being read using statistical methods, and focus on accuracy and usefulness for this application.
+
+
+  ### Privacy Protection
+
+  We consider user's privacy the most important thing. In the measurement, only anonymous data is handled and processed.
+  Currently, a "Do Not Track" (DNT) setting is implemented in many modern web browsers. We respect the choice made by the user by this setting. When DNT is set, reading tendency and degree of perusal reading are not measured. We also aim to make Scrolliris transparent by providing the open source code and specifications and explain why and how tracking is done.
+  Tracking tends to give a somewhat negative impression to the user. We want to reassure users by providing them with transparency and control.
+
+  As described above, we are not a social networking service. Unlike many SNSs, we don't track who you are, what you are interested in, who your friends are, and what your personal convictions and beliefs are. It goes without saying that we do not sell or give away your data to anyone.
+
+  Simply put, we are about text - text that is rich in content yet easy to read and digest.
+
+  ## What you can do on our service
+
+  ### Features
+
+  The main analysis features of Scrolliris are indicators of reading intensity and finishing statistics.
+  We are also working on the following new features.
+
+  * A/B testing, multivariate testing — You can test the title phrase, or publishing date
+  * Text Lint — You can check for grammatical mistakes or inconsistency
+  * Contribution to publication and review system — You can contribute to another publication, and get review
+  * Version control to track changes and fixes — You can easily manage versioning and see the changes
+  * Collaboration features such as comments — Support for team work
+  * Layout and style to support serious reading — Lets the reader concentrate on reading text
+  * License specification — Lets the author and creator easily specify a license
+  * E-book output/E-ink device support — Allows the reader to export a tex as E-book, if they read article eagerly and correct answer to the question by author, etc.
+
+  ## Current status
+
+  Our [sdk and libraries](https://gitlab.com/lupine-software) are ready.
+
+  Currently we are working on a public beta version. You can for now integrate text readability analysis into your document (for example, a blog, website or any web-based text). [Sign up](https://scrolliris.com/signup) now!
+
+  ### Development Roadmap
+
+  TODO
+
+  ## Pricing
+
+  Under consideration. We are looking for a mechanism that maximizes transparency.
+
+  ## Feedback
+
+  ### Contact us
+
+  We would deeply appreciate feedback from you!
+
+  ```
+  feedback@lupine-software.com
+  ```
+  &nbsp; or &nbsp; [@scrolliris](https://twitter.com/scrolliris)
+
+
+  ### Source code
+
+  This document and server application is available from [Lupine Software](https://gitlab.com/lupine-software) on GitLab.
