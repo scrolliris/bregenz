@@ -66,7 +66,7 @@ Don't commit directly the changes on above article project into this repo.
 ```zsh
 : setup `doc`
 % git remote add konstanz https://gitlab.com/lupine-software/konstanz.git
-% git subtree add --prefix doc/article master
+% git subtree add --prefix doc/article konstanz master
 
 : synchronize with updates into specified branch
 % git pull -s subtree -Xsubtree=doc/article konstanz master
