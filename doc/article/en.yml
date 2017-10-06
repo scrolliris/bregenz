@@ -2,7 +2,7 @@
 title: Scrolliris Concept Draft
 subtitle: Why we develop Scrolliris
 outline: >-
-  This is a public sample document using the product itself as a concept draft document. Scrolliris is a publication platform which utilizes text readability analysis through a browser widget. This demo shows how it works, using the application on the concept draft document of Scrolliris itself. The pop-up window at bottom left shows the results of the analysis in real time as a text readability heatmap.
+  Scrolliris is a publication platform which utilizes text readability analysis through a browser widget. This demo shows how it works, using the application on the concept draft document of Scrolliris itself. The pop-up window at bottom left shows the results of the analysis in real time as a text readability heatmap.
 license: CC-BY-NC-SA-4.0
 copyright: 2017 Lupine Software LLC
 authors:
@@ -45,7 +45,7 @@ body: |+
 
   We think that the focus on PV is really one of the main reasons that the internet is getting flooded with spam. Since the visibility of content and advertisement revenue depends so much on PV, there is a strong incentive to produce "click bait", interesting-looking links that turn out to be devoid of information. This situation comes from the historical fact that PV has been the only objective way for content providers to measure the user's attention and reaction to web content. In other words, the lack of other objective and general indicators led to the situation we see today. With Scrolliris, we introduce such objective indicators in a measurement mechanism that lets the author know not just how often their text has been accessed, but how intently it is being read.
 
-  ## Be anonymous, not social
+  ## We are about text, not social interaction
 
   More and more websites provide options to interact with Social Networking Services (SNS), including, for example, microblogging and blog services with SNS function. In social networks, we can make friends that we could not meet offline, and we can keep in contact with the people we know. We think that social networks are not the best place to read and write demanding and content-rich texts. Social networks can form echo chambers, which lack objectivity due to the confirmation bias of its members, and they contain many distracting elements that impede reading. All this does not make for a good environment for serious reading and writing. Social networks are not primarily about text, but about people engaged in social things like showing off, sharing experiences, and building relationships.
 
