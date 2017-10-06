@@ -10,7 +10,8 @@ authors:
 body: |+
   ## TL;DR
 
-  We are currently working on a public BETA version of [Scrolliris](https://scrolliris.com/).
+  We are currently working on a public BETA version of [Scrolliris](
+  https://scrolliris.com/).
   Please give us feedback. thanks! Happy Scrolling!
 
   ## Why we developing Scrolliris
@@ -106,23 +107,23 @@ body: |+
 
   We would deeply appreciate feedback from you!
 
-  ```
-  feedback@lupine-software.com
-  ```
+  `feedback@lupine-software.com`
   &nbsp; or &nbsp; [@scrolliris](https://twitter.com/scrolliris)
 
 
   ### Source code
 
-  This document and server application is available from [Lupine Software](https://gitlab.com/lupine-software) on GitLab.
+  This document and server application is available from [Lupine Software](
+  https://gitlab.com/lupine-software) on GitLab.
 
   ## Contributors
 
   Thank you for the correctness, suggestions and many improvements for this document!
 
-  ```txt
-  Kuno Strassmann
-  Charlotte
-  Zeno R.R. Davatz
-  Misaki Asaka
-  ```
+  - Kuno Strassmann
+  - Charlotte
+  - Zeno R.R. Davatz
+  - Misaki Asaka
+
+
+  UPDATED AT: 2017-10-07
