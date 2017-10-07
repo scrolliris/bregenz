@@ -30,7 +30,7 @@
   </head>
   <body id="application">
     <div class="global-header">
-      <div class="sixteen wide column">
+      <div class="column-16">
         <a href="https://try.scrolliris.com/"><img class="logo" width="48" height="48" src="${util.built_asset_url('img/scrolliris-logo-64x64.png')}"></a>
         <h1 class="logo-type">Try! Scrolliris</h1><br>
       </div>

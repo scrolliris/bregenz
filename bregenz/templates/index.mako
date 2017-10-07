@@ -25,17 +25,17 @@
 
     <div class="column-4">
       <div class="options">
-        <a class="item disabled"><% render_icon('text') %></a>
-        <a class="item disabled"><% render_icon('fullscreen-enter') %></a>
-        <span class="divider"></span>
+        <a class="item disabled mobile hidden"><% render_icon('text') %></a>
+        <a class="item disabled mobile hidden"><% render_icon('fullscreen-enter') %></a>
+        <span class="divider mobile hidden"></span>
         <a class="item disabled"><% render_icon('bookmark') %></a>
-        <a class="item disabled"><% render_icon('cog') %></a>
+        <a class="item disabled mobile hidden"><% render_icon('cog') %></a>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="offset-3 column-10">
+    <div class="offset-3 column-10 offset-l-1 column-l-14">
       <%block name='announcement'>
       <%
         msg = (req.session.pop_flash('announcement') or [None])[0]
@@ -53,7 +53,7 @@
 
         <article>
           <div class="extra info">
-            <div class="link">
+            <div class="link mobile hidden">
               <% render_icon('arrow-right', '0 0 8 8', 9, 9) %>Back to:
               <a href="https://about.scrolliris.com/">https://about.scrolliris.com/</a>
             </div>
