@@ -25,11 +25,11 @@
 
     <div class="column-4">
       <div class="options">
-        <a class="item disabled mobile hidden"><% render_icon('text') %></a>
-        <a class="item disabled mobile hidden"><% render_icon('fullscreen-enter') %></a>
-        <span class="divider mobile hidden"></span>
-        <a class="item disabled"><% render_icon('bookmark') %></a>
         <a class="item disabled mobile hidden"><% render_icon('cog') %></a>
+        <a class="item disabled"><% render_icon('bookmark') %></a>
+        <span class="divider mobile hidden"></span>
+        <a class="item disabled mobile hidden"><% render_icon('fullscreen-enter') %></a>
+        <a class="item disabled mobile hidden"><% render_icon('text') %></a>
       </div>
     </div>
   </div>
