@@ -8,7 +8,7 @@ endif
 
 app := bregenz
 
-# install
+# -- installation
 
 setup:
 	pip install -e '.[${env}]' -c constraints.txt
@@ -18,13 +18,13 @@ update:
 	pip install --upgrade -e '.[${env}]' -c constraints.txt
 .PHONY: setup
 
-# server
+# -- application
 
 serve:
 	./bin/serve --env development --config config/development.ini --reload
 .PHONY: serve
 
-# test
+# -- testing
 
 test:
 	ENV=test py.test -c 'config/testing.ini' -s -q
@@ -35,10 +35,18 @@ coverage:
 	  term-missing:skip-covered
 .PHONY: coverage
 
-# util
+# -- utility
 
-check:
+check-flake8:
 	flake8
+.PHONY: check-flake8
+
+check-pylint:
+	pylint
+.PHONY: check-pylint
+
+# TODO: add `check-pylint`
+check: | check-flake8
 .PHONY: check
 
 clean:
