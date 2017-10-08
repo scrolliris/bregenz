@@ -40,7 +40,6 @@ development_requires = [
     'colorlog',
     'better_exceptions',
     'flake8',
-    'flake8_docstrings',
     'pylint',
 
     'pylibmc',
@@ -51,7 +50,6 @@ testing_requires = [
     'colorlog',
     'better_exceptions',
     'flake8',
-    'flake8_docstrings',
     'pylint',
 
     'python-memcached',
