@@ -26,6 +26,7 @@ requires = [
     'pyramid_mako',
     'PyYAML',
     'webob',
+
     'wsgi-basic-auth',
 ]
 
@@ -39,20 +40,29 @@ if sys.version_info[0] < 3:  # python 2.7
 development_requires = [
     'colorlog',
     'better_exceptions',
-    'flake8',
-    'pylint',
-
     'pylibmc',
     'waitress',
+
+    'flake8',
+    'flake8_docstrings',
+    'pydocstyle',
+    'pycodestyle',
+    'pyflakes',
+    'pylint',
 ]
 
 testing_requires = [
     'colorlog',
     'better_exceptions',
+    'python-memcached',
+
     'flake8',
+    'flake8_docstrings',
+    'pydocstyle',
+    'pycodestyle',
+    'pyflakes',
     'pylint',
 
-    'python-memcached',
     'pytest',
     'pytest-cov',
     'pytest-mock',
@@ -69,10 +79,10 @@ setup(
     description='bregenz',
     long_description=README + '\n\n' + CHANGES,
     classifiers=[
-        "Programming Language :: Python",
-        "Framework :: Pyramid",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+        'Programming Language :: Python',
+        'Framework :: Pyramid',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
     ],
     author='',
     author_email='',
