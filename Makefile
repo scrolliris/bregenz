@@ -14,9 +14,13 @@ setup:
 	pip install -e '.[${env}]' -c constraints.txt
 .PHONY: setup
 
+setup-force:
+	pip install --upgrade --force-reinstall -e '.[${env}]' -c constraints.txt
+.PHONY: setup-force
+
 update:
 	pip install --upgrade -e '.[${env}]' -c constraints.txt
-.PHONY: setup
+.PHONY: update
 
 # -- application
 
