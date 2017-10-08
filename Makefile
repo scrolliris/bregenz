@@ -14,6 +14,10 @@ setup:
 	pip install -e '.[${env}]' -c constraints.txt
 .PHONY: setup
 
+update:
+	pip install --upgrade -e '.[${env}]' -c constraints.txt
+.PHONY: setup
+
 # server
 
 serve:
