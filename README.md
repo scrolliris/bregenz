@@ -2,11 +2,8 @@
 
 `/bʁeːgɛnt͡s/`
 
+[![pipeline status][ci-build]][commit] [![coverage report][ci-cov]][commit]
 
-[![build status](https://gitlab.com/lupine-software/bregenz/badges/master/build.svg)](
-https://gitlab.com/lupine-software/bregenz/commits/master) [![coverage report](
-https://gitlab.com/lupine-software/bregenz/badges/master/coverage.svg)](
-https://gitlab.com/lupine-software/bregenz/commits/master)
 
 ```txt
  , __
@@ -21,6 +18,12 @@ Bregenz; BaRe concEpt paGE applicatioN bregenZ
 ```
 
 The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
+
+
+## Repository
+
+[https://gitlab.com/lupine-software/bregenz](
+https://gitlab.com/lupine-software/bregenz)
 
 
 ## Requirements
@@ -208,10 +211,68 @@ TODO
 
 ## License
 
-Bregenz; Copyright (c) 2017 Lupine Software LLC
+This project is distributed as various licenses by parts.
 
-This is free software;  
+### Documentation
+
+`GFDL-1.3`
+
+The files in the `bregenz/doc` directory are distributed as
+GNU Free Documentation License. (version 1.3)
+
+```txt
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+```
+
+Check the [GNU Free Documentation License](
+https://www.gnu.org/licenses/fdl-1.3.en.html).
+
+### Resource (image)
+
+`CC-BY-NC-SA-4.0`
+
+The files in the `beregnz/assets/img` directory are licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+Public License.
+
+[![Creative Commons License](
+https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](
+http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+Check the [Legalcode](
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
+### Software (program)
+
+`AGPL-3.0`
+
+```
+Bregenz
+Copyright (c) 2017 Lupine Software LLC
+
+This is free software:  
 You can redistribute it and/or modify it under the terms of the
-GNU Affero General Public License (AGPL).
+GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+```
 
 See [LICENSE](LICENSE).
+
+
+[ci-build]: https://gitlab.com/lupine-software/bregenz/badges/master/build.svg
+[ci-cov]: https://gitlab.com/lupine-software/bregenz/badges/master/coverage.svg
+[commit]: https://gitlab.com/lupine-software/bregenz/commits/master
