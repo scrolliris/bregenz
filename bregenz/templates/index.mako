@@ -1,8 +1,6 @@
 <%inherit file='_layout.mako'/>
 
-<%block name='title'>
-  Scrolliris
-</%block>
+<%block name='title'>Try Scrolliris</%block>
 
 <%block name='footer'>
 </%block>
