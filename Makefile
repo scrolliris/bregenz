@@ -62,10 +62,11 @@ analyze:
 
 clean:
 	find . ! -readable -prune -o -print \
-	 ! -path "./.git/*" ! -path "./node_modules/*" ! -path "./venv*" \
-	 ! -path "./doc/*" ! -path "./locale/*" ! -path "./tmp/*" \
-	 ! -path "./lib/*" | \
-	 grep -E "(__pycache__|\.egg-info|\.pyc|\.pyo)" | xargs rm -rf
+		! -path "./.git/*" ! -path "./node_modules/*" ! -path "./venv*" \
+		! -path "./doc/*" ! -path "./locale/*" ! -path "./tmp/*" \
+		! -path "./lib/*" | \
+	grep -E "(__pycache__|\.egg-info|\.pyc|\.pyo)" | \
+	xargs rm -rf
 ifeq (, $(shell which gulp 2>/dev/null))
 	$(info gulp command not found. run `npm install -g gulp-cli`)
 	$(info )
