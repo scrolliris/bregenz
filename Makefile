@@ -41,17 +41,16 @@ coverage:
 
 # -- utility
 
-check-flake8:
+check:
 	flake8
-.PHONY: check-flake8
-
-check-pylint:
-	pylint
-.PHONY: check-pylint
-
-# TODO: add `check-pylint`
-check: | check-flake8
 .PHONY: check
+
+lint:
+	pylint bregenz
+.PHONY: lint
+
+vet: | check lint
+.PHONY: vet
 
 analyze:
 	docker run --interactive --tty --rm --env CODECLIMATE_CODE="$(PWD)" \
