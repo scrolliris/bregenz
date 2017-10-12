@@ -120,6 +120,6 @@ codequality:
     - docker pull codeclimate/codeclimate
   script:
     - make analyze
-  artifacs:
+  artifacts:
     paths:
       - codequality.json
