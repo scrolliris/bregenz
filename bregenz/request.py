@@ -25,6 +25,27 @@ TRUSTED_NETWORKS = [ipaddress.ip_network(n) for n in [
 ]]
 
 
+def buid_base_url(req, is_production=True):
+    """Creates base_url string
+
+    if req has `settings`, then wsgi.url_scheme will be fetched,
+    otherwise use just `https` as schema.
+    """
+    schema = 'https'
+    settings = getattr(req, 'settings', None)
+    if callable(settings):
+        schema = req.settings.get('wsgi.url_scheme', 'https')
+
+    base_url = '{0!s}://{1!s}:{2!s}'.format(
+        schema,
+        req.environ.get('HTTP_HOST', '127.0.0.1'),
+        req.environ.get('HTTP_PORT', '5000')
+    )
+    if is_production:
+        base_url = re.sub(':[0-9]+$', '', base_url)
+    return base_url
+
+
 class CustomRequest(Request):
     def __init__(self, *args, **kwargs):
         env_dict = (args[0] or {})
@@ -37,18 +58,9 @@ class CustomRequest(Request):
             env_dict = self._trim_port(env_dict)
 
         new_args = (env_dict, args[1:])
-
+        # set pseudo value for tasks
         if 'base_url' in kwargs and kwargs['base_url'] is None:
-            # create base_url from pseudo values for tasks
-            base_url = '{0!s}://{1!s}:{2!s}'.format(
-                self.settings.get('wsgi.url_scheme', 'https'),
-                self.environ.get('HTTP_HOST', '127.0.0.1'),
-                self.environ.get('HTTP_PORT', '5000')
-            )
-            if env.is_production:
-                base_url = re.sub(':[0-9]+$', '', base_url)
-
-            kwargs['base_url'] = base_url
+            kwargs['base_url'] = buid_base_url(self, env.is_production)
 
         if sys.version_info[0] > 3:
             super().__init__(*new_args, **kwargs)
