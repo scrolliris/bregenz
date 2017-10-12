@@ -9,7 +9,9 @@ __pycache__
 
 .env
 .env.ci
+
 .coverage
+codequality.json
 
 app.yaml
 /*_config.py

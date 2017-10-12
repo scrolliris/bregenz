@@ -54,11 +54,11 @@ check: | check-flake8
 .PHONY: check
 
 analyze:
-	docker run --interactive --tty --rm \
-		--env CODECLIMATE_CODE="$PWD" --volume "$PWD":/code \
+	docker run --interactive --tty --rm --env CODECLIMATE_CODE="$(PWD)" \
+		--volume "$(PWD)":/code \
 		--volume /var/run/docker.sock:/var/run/docker.sock \
 		--volume /tmp/cc:/tmp/cc codeclimate/codeclimate \
-		analyze -f text > quality.txt
+		analyze -f json > codequality.json
 .PHONY: analyze
 
 clean:
