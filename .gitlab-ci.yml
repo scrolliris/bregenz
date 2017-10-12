@@ -4,6 +4,7 @@ stages:
   - check
   - test27
   - test
+  - codequality
 
 build:
   stage: build
@@ -107,3 +108,18 @@ test:
       - pip-cache
   except:
     - tags
+
+codequality:
+  stage: codequality
+  image: docker:latest
+  variables:
+    DOCKER_DRIVER: overlay
+  services:
+    - docker:dind
+  before_script:
+    - docker pull codeclimate/codeclimate
+  script:
+    - make analyze
+  artifacs:
+    paths:
+      - codequality.json
