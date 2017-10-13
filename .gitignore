@@ -11,7 +11,7 @@ __pycache__
 .env.ci
 
 .coverage
-codequality.json
+codequality.*
 
 app.yaml
 /*_config.py

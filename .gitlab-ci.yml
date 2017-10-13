@@ -119,7 +119,7 @@ codequality:
   before_script:
     - docker pull codeclimate/codeclimate
   script:
-    - make analyze
+    - ./bin/analyze json > codequality.json
   artifacts:
     paths:
       - codequality.json
