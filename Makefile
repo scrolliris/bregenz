@@ -53,16 +53,21 @@ vet: | check lint
 .PHONY: vet
 
 analyze:
-	./bin/analyze text > tmp/codequality.txt && cat tmp/codequality.txt
+	docker run --interactive --tty --rm --env CODECLIMATE_CODE="${PWD}" \
+	  --volume "${PWD}":/code \
+	  --volume /var/run/docker.sock:/var/run/docker.sock \
+	  --volume /tmp/cc:/tmp/cc \
+	  codeclimate/codeclimate analyze -f text > tmp/codequality.txt
+	cat tmp/codequality.txt
 .PHONY: analyze
 
 clean:
 	find . ! -readable -prune -o -print \
-		! -path "./.git/*" ! -path "./node_modules/*" ! -path "./venv*" \
-		! -path "./doc/*" ! -path "./locale/*" ! -path "./tmp/*" \
-		! -path "./lib/*" | \
-	grep -E "(__pycache__|\.egg-info|\.pyc|\.pyo)" | \
-	xargs rm -rf
+	  ! -path "./.git/*" ! -path "./node_modules/*" ! -path "./venv*" \
+	  ! -path "./doc/*" ! -path "./locale/*" ! -path "./tmp/*" \
+	  ! -path "./lib/*" | \
+	  grep -E "(__pycache__|\.egg-info|\.pyc|\.pyo)" | \
+	  xargs rm -rf
 ifeq (, $(shell which gulp 2>/dev/null))
 	$(info gulp command not found. run `npm install -g gulp-cli`)
 	$(info )
