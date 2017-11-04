@@ -11,8 +11,7 @@ from pyramid.events import BeforeRender
 
 @subscriber(BeforeRender)
 def add_template_util_renderer_globals(evt):
-    """Adds template utility instance as `util`
-    """
+    """Adds template utility instance as `util`."""
     ctx, req = evt['context'], evt['request']
     util = getattr(req, 'util', None)
 
@@ -25,11 +24,22 @@ def add_template_util_renderer_globals(evt):
 
 
 def clean(**kwargs):  # type (dict) -> 'function'
-    """Returns sanitized value except allowed tags and attributes
+    """Returns sanitized value except allowed tags and attributes.
 
-    >>> ${'<a href="/"><em>link</em></a>'|n,clean(
-            tags=['a'], attributes=['href'])}
-    "<a href="/">link</a>"
+    The usage looks like:
+
+    ```
+    ${'<a href="/"><i>link</i></a>'|n,clean(tags=['a'], attributes=['href'])}
+    ```
+
+    >>> from bregenz.utils.template import clean
+
+    >>> type(clean(tags=['a'], attributes=['href']))
+    <class 'function'>
+
+    >>> c = clean(tags=['a'], attributes=['href'])
+    >>> str(c('<a href="/"><em>link</em></a>'))
+    '<a href="/">&lt;em&gt;link&lt;/em&gt;</a>'
     """
     def __clean(text):  # type (str) -> Markup
         return Markup(_clean(text, **kwargs))
@@ -38,8 +48,6 @@ def clean(**kwargs):  # type (dict) -> 'function'
 
 
 class TemplateUtil(object):
-    """The utility for templates
-    """
     def __init__(self, ctx, req, **kwargs):
         self.ctx, self.req = ctx, req
 
@@ -57,7 +65,7 @@ class TemplateUtil(object):
             return route.name
 
     @reify
-    def manifest_json(self):
+    def manifest_json(self):  # pylint: disable=no-self-use
         manifest_file = path.join(
             path.dirname(__file__), '..', '..', 'static', 'manifest.json')
         data = {}
@@ -93,12 +101,11 @@ class TemplateUtil(object):
     def is_matched(self, matchdict):
         return self.req.matchdict == matchdict
 
-    def static_url(self, path):
-        return self.req.static_url('bregenz:../static/' + path)
+    def static_url(self, filepath):
+        return self.req.static_url('bregenz:../static/' + filepath)
 
-    def static_path(self, path):
-        return self.req.static_path('bregenz:../static/' + path)
+    def static_path(self, filepath):
+        return self.req.static_path('bregenz:../static/' + filepath)
 
-    def built_asset_url(self, path):
-        path = self.manifest_json.get(path, path)
-        return self.static_url(path)
+    def hashed_asset_url(self, filepath):
+        return self.static_url(self.manifest_json.get(filepath, filepath))

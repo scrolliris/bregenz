@@ -1,5 +1,3 @@
-"""Module to start application server
-"""
 import os
 import sys
 
@@ -10,8 +8,6 @@ from pyramid.paster import (
 
 
 def usage(argv):
-    """Prints bregenz_pstart command usage
-    """
     cmd = os.path.basename(argv[0])
     print('usage: %s <config_uri> [var=value]\n'
           '(example: "%s {staging|production}.ini")' % (cmd, cmd))
@@ -19,8 +15,6 @@ def usage(argv):
 
 
 def main(argv, _quiet=False):
-    """Starts main production server process
-    """
     if len(argv) < 2:
         usage(argv)
 
@@ -32,6 +26,7 @@ def main(argv, _quiet=False):
 
 
 if __name__ == '__main__':
+    # pylint: disable=relative-import
     from paste.script.cherrypy_server import cpwsgi_server
     from bregenz.env import Env
 

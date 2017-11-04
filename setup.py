@@ -1,7 +1,3 @@
-# pylint: disable=C0103
-"""Bregenz setup script
-"""
-
 import os
 import sys
 

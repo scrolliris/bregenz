@@ -1,5 +1,3 @@
-"""View action for article
-"""
 from datetime import datetime
 from os import path
 
@@ -23,8 +21,7 @@ from bregenz.views import tpl
 
 
 def render_content(article_path):  # type (str) -> 'function'
-    """Return a funciton to parse article content in yaml
-    """
+    """Return a funciton to parse article content in yaml."""
     def _content():  # type () -> dict
         if path.isfile(article_path):
             with open(article_path, 'r') as f:
@@ -56,8 +53,6 @@ def render_content(article_path):  # type (str) -> 'function'
 @view_config(route_name='index',
              renderer=tpl('index.mako'))
 def index(_req):
-    """Renders a article
-    """
     article_path = path.join(
         path.dirname(__file__),
         '../../doc/article/en.yml',

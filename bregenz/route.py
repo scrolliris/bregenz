@@ -5,7 +5,7 @@ from .env import Env
 
 
 class SubdomainPredicate(object):
-    def __init__(self, val, config):
+    def __init__(self, val, _config):
         self.val = val
 
     def text(self):
@@ -23,7 +23,7 @@ class SubdomainPredicate(object):
 def subdomain_pregenerator(subdomain):
     env = Env()
 
-    def pregenerator(request, elements, kw):
+    def pregenerator(_request, elements, kw):
         domain = env.get('DOMAIN_APPLICATION', None)
         if subdomain:
             kw['_host'] = '{0!s}.{1!s}'.format(subdomain, domain)

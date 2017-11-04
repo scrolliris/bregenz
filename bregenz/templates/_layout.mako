@@ -26,7 +26,7 @@
     <link rel="author" type="text/plain" href="/humans.txt">
     <style>body{background-color:#ffffff;}</style>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:300" rel="stylesheet">
-    <link rel="stylesheet" href="${req.util.built_asset_url('master.css')}">
+    <link rel="stylesheet" href="${req.util.hashed_asset_url('master.css')}">
   </head>
   <body id="application">
     <div id="wrapper">
@@ -62,7 +62,7 @@
     ## <%include file='_font.mako'/>
 
     <%block name='script'>
-    <script src="${util.built_asset_url('master.js')}" charset="utf-8"></script>
+    <script src="${util.hashed_asset_url('master.js')}" charset="utf-8"></script>
     </%block>
     <%block name='extra_script'/>
   </body>

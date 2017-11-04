@@ -46,7 +46,7 @@ check:
 .PHONY: check
 
 lint:
-	pylint bregenz
+	pylint test ${app}
 .PHONY: lint
 
 vet: | check lint

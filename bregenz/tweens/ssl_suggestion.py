@@ -37,9 +37,7 @@ def set_hsts_header(res):
 
 
 def tween_factory(handler, registry):
-    """This tween suggests does not redirect by itself, suggests new url with
-    ssl via flash message instead
-    """
+    """Suggests new url with ssl via flash message."""
     get_config = config_get(registry)
 
     hsts_header = get_config('hsts_header', 'False')
@@ -47,8 +45,7 @@ def tween_factory(handler, registry):
     proto_header = get_config('proto_header', None)
 
     def ssl_suggestion_tween(req):
-        """Handles request with ssl checker and suggestions
-        """
+        """Handles request with ssl checker and suggestions."""
         criteria = [
             req.url.startswith('https://'),
             (not req.path.startswith('/assets/')),

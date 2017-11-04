@@ -1,6 +1,3 @@
-"""Main function and utilities for the application
-"""
-
 from pyramid.config import Configurator
 from pyramid.util import DottedNameResolver
 from pyramid.threadlocal import get_current_registry
@@ -9,14 +6,12 @@ from bregenz.env import Env
 
 
 def get_settings():
-    """Returns settings from current ini
-    """
+    """Returns settings from current ini."""
     return get_current_registry().settings
 
 
 def resolve_settings(settings):
-    """ Resolving settings.
-    """
+    """Resolving settings."""
     s = settings.copy()
     settings_defaults = {
         'bregenz.includes': {
@@ -32,8 +27,7 @@ def resolve_settings(settings):
 
 
 def resolve_names(settings, directive='bregenz.includes'):
-    """ Resolves dotted module names.
-    """
+    """Resolves dotted module names."""
     s = settings.copy()
     for k, v in s[directive].items():
         if not isinstance(v, str):
@@ -43,11 +37,9 @@ def resolve_names(settings, directive='bregenz.includes'):
 
 
 def resolve_env_vars(settings):
-    """Returns settings resolved with vars from os.environ
-    """
+    """Returns settings resolved with vars from os.environ."""
     def get_new_v(env, value, expected_type):
-        """Gets expected value from environ variable
-        """
+        """Gets expected value from environ variable."""
         new_v = env.get(value, None)
         if not isinstance(new_v, expected_type):
             return None
@@ -69,8 +61,6 @@ def resolve_env_vars(settings):
 
 
 def main(_global_config, **settings):
-    """This function returns a Pyramid WSGI application
-    """
     from bregenz.request import CustomRequest
 
     config = Configurator(settings=resolve_settings(dict(settings)))

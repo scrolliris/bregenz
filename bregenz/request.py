@@ -1,6 +1,3 @@
-"""Request module
-"""
-
 import re
 import ipaddress
 import sys
@@ -26,7 +23,7 @@ TRUSTED_NETWORKS = [ipaddress.ip_network(n) for n in [
 
 
 def buid_base_url(req, is_production=True):
-    """Creates base_url string
+    """Creates base_url string.
 
     if req has `settings`, then wsgi.url_scheme will be fetched,
     otherwise use just `https` as schema.
@@ -46,7 +43,7 @@ def buid_base_url(req, is_production=True):
     return base_url
 
 
-class CustomRequest(Request):
+class CustomRequest(Request):  # pylint: disable=too-many-ancestors
     def __init__(self, *args, **kwargs):
         env_dict = (args[0] or {})
 
@@ -55,7 +52,7 @@ class CustomRequest(Request):
         env = Env()
         if env.is_production:
             env_dict = self._force_ssl(env_dict)
-            env_dict = self._trim_port(env_dict)
+            env_dict = self.__class__.trim_port(env_dict)
 
         new_args = (env_dict, args[1:])
         # set pseudo value for tasks
@@ -63,9 +60,19 @@ class CustomRequest(Request):
             kwargs['base_url'] = buid_base_url(self, env.is_production)
 
         if sys.version_info[0] > 3:
+            # pylint: disable=missing-super-argument
             super().__init__(*new_args, **kwargs)
         else:
-            super(Request, self).__init__(*new_args, **kwargs)
+            super(CustomRequest, self).__init__(*new_args, **kwargs)
+
+    @classmethod
+    def trim_port(cls, env_dict):
+        http_host = env_dict.get('HTTP_HOST', '')
+        http_host = re.sub(':[0-9]+$', '', http_host)
+
+        env_dict['HTTP_HOST'] = http_host
+        env_dict['SERVER_PORT'] = ''
+        return env_dict
 
     @property
     def settings(self):
@@ -76,8 +83,7 @@ class CustomRequest(Request):
     # see https://github.com/Pylons/webob/issues/77
     @reify
     def remote_ip(self):
-        """Calculates client's ip address
-        """
+        """Calculates client's ip address."""
         from collections import OrderedDict
         import itertools
 
@@ -91,6 +97,7 @@ class CustomRequest(Request):
         if (client_ips and client_ips[-1]) and \
            (forwarded_ips and forwarded_ips[-1]) and \
            (client_ips[-1] not in forwarded_ips):
+            # pylint: disable=no-member
             raise Exception(
                 'It may be IP snoofing attack! '
                 'HTTP_CLIENT_IP: {0!s} HTTP_X_FORWARDED_FOR: {1!s}'.format(
@@ -100,32 +107,23 @@ class CustomRequest(Request):
         ips = list(OrderedDict.fromkeys(itertools.chain.from_iterable(
             [forwarded_ips, client_ips, [remote_addr]])))
 
-        is_found_trusted_ips = False
+        found_trusted_ips = False
         for ip in ips:
             ip_addr = ipaddress.ip_address(ip)
             for tp in TRUSTED_NETWORKS:
                 if ip_addr in tp:
-                    is_found_trusted_ips = True
+                    found_trusted_ips = True
                     break
 
-        return ips[0] if is_found_trusted_ips else remote_addr
+        return ips[0] if found_trusted_ips else remote_addr
 
     def _ips_at(self, header):
-        """Returns valid ip address only
-        """
-        value = self.environ.get(header, None)
+        """Returns only valid ip addresses."""
+        value = self.environ.get(header, None)  # pylint: disable=no-member
         ips = re.split(r'[,\s]+', value) if value else []
         return [ip for ip in ips if IPV4_ADDR.match(ip) or IPV6_ADDR.match(ip)]
 
     def _force_ssl(self, env_dict):
         env_dict['wsgi.url_scheme'] = self.settings.get(
             'wsgi.url_scheme', 'https')
-        return env_dict
-
-    def _trim_port(self, env_dict):
-        http_host = env_dict.get('HTTP_HOST', '')
-        http_host = re.sub(':[0-9]+$', '', http_host)
-
-        env_dict['HTTP_HOST'] = http_host
-        env_dict['SERVER_PORT'] = ''
         return env_dict

@@ -1,11 +1,13 @@
+from __future__ import print_function
 import os
 
+# pylint: disable=wrong-import-position
 from pyramid.decorator import reify
 
 
 # OS's environ handler (wrapper)
 # This class has utilities to treat environment variables.
-class Env():
+class Env(object):
     VALUES = ('development', 'test', 'production')
 
     def __init__(self):
@@ -52,15 +54,15 @@ class Env():
             'wsgi.auth_credentials': 'WSGI_AUTH_CREDENTIALS',
         }
 
-    def get(self, key, default=None):
+    def get(self, key, default=None):  # pylint: disable=no-self-use
         return os.environ.get(key, default)
 
-    def set(self, key, value):
+    def set(self, key, value):  # pylint: disable=no-self-use
         os.environ[key] = value
 
     @reify
     def host(self):
-        # TODO
+        # TODO:
         # get host and port from server section in ini as fallback
         return str(self.get('HOST', '127.0.0.1'))
 

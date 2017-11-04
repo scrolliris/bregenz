@@ -1,3 +1,4 @@
+# pylint: disable=redefined-outer-name,unused-argument
 import os
 
 import pytest
@@ -84,9 +85,6 @@ def config(request, settings):
 
     config = testing.setUp(settings=settings)
 
-    # FIXME:
-    #    these includings from .ini file are not evaluated
-    #    in unittest.
     config.include('pyramid_assetviews')
     config.include('pyramid_beaker')
     config.include('pyramid_mako')
