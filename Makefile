@@ -1,9 +1,14 @@
 ifeq (, $(ENV))
+	ENV := development
 	env := development
 else ifeq (test, $(ENV))
 	env := testing
 else
 	env := $(ENV)
+endif
+
+ifeq (, $(NODE_ENV))
+	NODE_ENV := development
 endif
 
 app := bregenz
@@ -60,6 +65,15 @@ analyze:
 	  codeclimate/codeclimate analyze -f text > tmp/codequality.txt
 	cat tmp/codequality.txt
 .PHONY: analyze
+
+build:
+ifeq (, $(shell which gulp 2>/dev/null))
+	$(info gulp command not found. run `npm install -g gulp-cli`)
+	$(info )
+else
+	NODE_ENV=$(NODE_ENV) gulp
+endif
+.PHONY: build
 
 clean:
 	find . ! -readable -prune -o -print \
