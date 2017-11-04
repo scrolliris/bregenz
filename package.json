@@ -14,7 +14,6 @@
   ],
   "dependencies": {
     "open-iconic": "1.1.1",
-    "styr": "0.0.21",
     "babel-core": "6.22.1",
     "babel-loader": "6.2.10",
     "babel-plugin-transform-async-to-generator": "6.24.1",
@@ -31,6 +30,7 @@
     "style-loader": "0.13.1",
     "stylus": "0.54.5",
     "stylus-loader": "2.4.0",
+    "styr": "0.0.24",
     "svg-sprite-loader": "0.2.0",
     "url-loader": "0.5.7",
     "vinyl-named": "1.1.0",

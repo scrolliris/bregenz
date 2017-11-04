@@ -5,13 +5,15 @@
 <%block name='footer'>
 </%block>
 
+<% content = render_content() %>
+
 <div class="grid">
-  <div class="nav row">
+  <div class="secondary nav row">
     <div class="column-12">
       <div class="breadcrumb">
-        <a class="item" href="/">Publication</a>
+        <a class="item" href="/">Concepts of science and knowledge</a>
         <span class="divider">&gt;</span>
-        <span class="active item">Concept Draft</span>
+        <span class="active item">${content['title']}</span>
       </div>
     </div>
 
@@ -33,7 +35,7 @@
   </div>
 
   <div class="row">
-    <div class="offset-3 column-10 offset-l-1 column-l-14">
+    <div class="article-container offset-4 column-8 offset-l-1 column-l-14">
       <%block name='announcement'>
       <%
         msg = (req.session.pop_flash('announcement') or [None])[0]
@@ -47,12 +49,26 @@
       </%block>
 
       <%def name="render_article()">
-        <% content = render_content() %>
+        <%
+          import hashlib
 
+          def authors_with_avator(authors):
+              m = hashlib.md5()
+              for a in content['authors']:
+                  author = ''
+                  if 'mail' in a and a['mail']:
+                      m.update(a['mail'])
+                      author += '<img class="avatar" src="https://www.gravatar.com/avatar/{}.jpg?s=32">'.format(m.hexdigest())
+                  author += '<span class="name">{}</span>'.format(a['name'])
+                  yield author
+        %>
         <article>
+          <h1 class="title">${content['title']}</h1>
           <div class="extra info">
+            <div class="author">${',&nbsp;'.join(authors_with_avator(content['authors']))|n,trim}</div>
+            <div class="published_at">published in <span class="class">Concepts of science and knowledge</span></div>
             <div class="link mobile hidden">
-              <% render_icon('arrow-right', '0 0 8 8', 9, 9) %>Back to:
+              <% render_icon('arrow-right', '0 0 8 8', 8, 8) %>Back to:
               <a href="https://about.scrolliris.com/">https://about.scrolliris.com/</a>
             </div>
             <div class="badge">
@@ -66,7 +82,6 @@
         </article>
 
         <div class="meta">
-          <p class="author">${','.join(content['authors'])}</p>
           <span class="license primary label">${content['license']}</span>
           <p class="copy">&copy;${content['copyright']}</p>
         </div>

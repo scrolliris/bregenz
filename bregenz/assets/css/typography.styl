@@ -1,24 +1,45 @@
 body
-  h1
-    padding 0
-    min-height 1rem
-    line-height 1.28rem
-    font-size 1.54rem
-    font-weight 700
-    font-family Helvetica Neue,Arial,Helvetica,sans-serif
+  .logo
+    span.logo-type
+      padding 0
+      vertical-align top
+      min-height 1.1rem
+      line-height 1.28rem
+      font-size 0.68em
+      font-weight normal
+      font-family 'Roboto Slab', serif
+
+.nav
+  font-size 0.88em
+  font-family 'Roboto Slab', serif
+
+.meta
+  font-family 'Open Sans', Helvetica neue, Arial, sans-serif
+  h3
+    font-weight normal
+
+  .author
+    font-size 0.89em
+
+  .copy
+    font-size 0.89em
 
 article
-  .meta
-    h3
-      font-weight normal
+  .extra.info
+    font-family 'Open Sans', serif
+    .author,
+    .published_at
+      line-height 1.46em
+      font-size 0.88rem
 
   .title,
   .subtitle
-    font-family 'museo-slab', 'heisei-maru-gothic-std', sans-serif
+    font-family 'Roboto Slab', serif
     font-style normal
 
   .title
-    font-weight 400
+    font-family 'Open Sans', Helvetica neue, Arial, sans-serif
+    font-weight 300
     font-size 1.93em
 
   .subtitle
@@ -27,18 +48,18 @@ article
     line-height 1.445em
 
   .outline
-    font-family 'museo-slab', 'heisei-maru-gothic-std', sans-serif
+    font-family 'Roboto Slab', serif
     font-style normal
     font-weight 100
-    font-size 1.15em
+    font-size 1.08em
     line-height 1.16em
     hyphens auto
 
   .body
-    font-family 'museo-slab', 'heisei-maru-gothic-std', serif
-    font-size 1.46em
+    font-family 'Roboto Slab', serif
+    font-size 1.32em
     font-style normal
-    line-height 1.583em
+    line-height 1.103em
     font-weight 100
     hyphens auto
     h1,
@@ -47,39 +68,44 @@ article
     h4,
     h5,
     h6
-      font-family 'heisei-maru-gothic-std', Helvetica neue, Arial, sans-serif
+      font-family 'Open Sans', Helvetica neue, Arial, sans-serif
+      font-weight bold
+      letter-spacing 0.0014em
+    h1
+      margin 1.82rem 0 0.21rem 0
     h2
-      font-family monospace
-      font-size 1.54rem
-      font-weight 600
+      font-size 1.34rem
+      margin 1.82rem 0 0.21rem 0
     h3
-      font-family monospace
-      font-size 1.34rem
-      font-weight 500
+      font-size 1.12rem
+      margin 0.98rem 0 0.16rem 0
     h4
-      font-size 1.34rem
-      font-weight 400
+      font-size 1.09rem
+      font-weight normal
+      margin 0.59rem 0 0.18rem 0
     h5
-      font-size 1.26rem
-      font-weight 300
-    h5
-      font-size 1.16rem
-      font-weight 200
+      font-size 1.03rem
+      font-weight normal
+      margin 0.55rem 0 0.8rem 0
+    h6
+      font-size 0.94rem
+      font-weight normal
+      margin 0.55rem 0 0.8rem 0
     p
-      font-size 1.29rem
-      font-weight 200
-      line-height 1.51em
+      font-size 1.12rem
+      line-height 1.34em
+      letter-spacing 0.0012em
     strong
-      font-weight 700
+      font-weight 600
       display inline-block
       padding 0 3px
     ul
-      margin 1.22rem 0 0.81rem 1.22rem
+      margin 1.22rem 0 0.81rem 1.26rem
       padding 0
       li
-        line-height 1.41em
-        font-size 1.16rem
-        font-weight 200
+        line-height 1.38em
+        font-size 1.08rem
+        font-weight 100
     code
       font-weight 300
       display inline-block
@@ -89,5 +115,46 @@ article
       border 1px solid $gray1
       border-radius 2px
 
-  .tag
-    font-size 1.42rem
+@media only screen and (max-width: 780px)
+  /* same with normal size (column-n-N) */
+  .secondary.nav
+    font-size 0.78em
+    line-height 0.58em
+
+  article
+    .title
+      font-size 1.18em
+    .outline
+      font-size 0.96em
+      line-height 1.08em
+    .body
+      font-size 1.12em
+      h1
+        margin 1.32rem 0 0.11rem 0
+      h2
+        font-size 1.34rem
+        margin 1.22rem 0 0.9rem 0
+      h3
+        font-size 1.02rem
+        margin 0.88rem 0 0.8rem 0
+      h4
+        font-size 0.98rem
+        font-weight normal
+        margin 0.59rem 0 0.18rem 0
+      h5
+        font-size 1.03rem
+        font-weight normal
+        margin 0.55rem 0 0.8rem 0
+      h6
+        font-size 0.94rem
+        font-weight normal
+        margin 0.55rem 0 0.8rem 0
+      p
+        font-size 0.89em
+        line-height 1.11em
+      ul
+        margin 1.02rem 0 0.61rem 1.22rem
+        li
+          line-height 1.08em
+          font-size 1.03rem
+          font-weight 100

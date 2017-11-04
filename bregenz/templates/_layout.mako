@@ -23,19 +23,12 @@
     <link rel="icon" type="image/png" sizes="48x48" href="${req.util.static_path('img/favicon-48.png')}">
     <link rel="icon" type="image/png" sizes="32x32" href="${req.util.static_path('img/favicon-32.png')}">
     <link rel="icon" type="image/png" sizes="16x16" href="${req.util.static_path('img/favicon-16.png')}">
-    <link rel="humans" type="text/plain" href="/humans.txt">
-    <link rel="robots" type="text/plain" href="/robots.txt">
+    <link rel="author" type="text/plain" href="/humans.txt">
     <style>body{background-color:#ffffff;}</style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:300" rel="stylesheet">
     <link rel="stylesheet" href="${req.util.built_asset_url('master.css')}">
   </head>
   <body id="application">
-    <div class="global-header">
-      <div class="column-16">
-        <a href="https://try.scrolliris.com/"><img class="logo" width="48" height="48" src="${util.built_asset_url('img/scrolliris-logo-64x64.png')}"></a>
-        <h1 class="logo-type">Try! Scrolliris</h1><br>
-      </div>
-    </div>
-
     <div id="wrapper">
       <header>
         <%block name='header'>
@@ -66,7 +59,7 @@
     <% add_icons('master.svg') %>
     </svg>
 
-    <%include file='_font.mako'/>
+    ## <%include file='_font.mako'/>
 
     <%block name='script'>
     <script src="${util.built_asset_url('master.js')}" charset="utf-8"></script>

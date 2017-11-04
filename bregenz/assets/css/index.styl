@@ -1,33 +1,30 @@
 @import './shared/_colour.styl'
 @import './shared/_article.styl'
 
+.article-container
+  padding 0.6rem 0.44rem
+
 article
   margin-top 0
   padding-top 0
 
-  .extra.info
-    padding 0.88rem 0 1.91rem 0
-    margin 0
-    .link,
-    .badge
-      width 50%
-      min-height 1.6rem
-
-    .link
-      float left
-      display inline-block
-      padding-top 0.382rem
-
-    .badge
-      float right
-      padding-right 0.26rem
-      margin 0
-      text-align right
-
-  .outline
-    margin 2.24rem 0 1.2rem 0
-
   article-components()
+
+.meta
+  .license
+    display inline-block
+    margin 0.48rem 0
+
+  .copy
+    display block
+    margin 0 0 0 0.06em
+
+  p.tag
+    margin-top 2rem
+    color darkgray
+    span
+      display inline-block
+      margin-right 0.66rem
 
 
 // options
@@ -35,9 +32,12 @@ article
   .item.disabled
     svg
       use.icon
-        fill lightgray
+        fill darken(#f0ede6, 9%)
 
 @media only screen and (max-width: 780px)
   /* same with normal size (column-n-N) */
   .mobile.hidden
     display none !important
+
+  .article-container
+    padding 0

@@ -4,14 +4,41 @@
 *
   box-sizing border-box !important
 
+.global-header
+  margin 0
+  min-height 3.32rem
+  padding 0.02rem 1.08rem 0 1.08rem
+  border none
+  background-color #454545
+  box-shadow none
+  div
+    padding 0
+  .logo
+    margin 0.48rem 0 0 0.51rem
+    padding 0
+    float left
+    img.logo-mark
+      display inline-block
+      margin 0 0.12rem
+    span.logo-type
+      display inline-block
+      margin 0.44rem 0 0 0.72rem
+      text-decoration none
+      span.scroll
+        color #f2f2f2
+      span.iris
+        color #a5a0ae
+  .right.item
+    float right
+    display inline-block
+    padding-top 0.98rem
+
+
 #application
   main
     margin 0 0 0.9rem 0
 
     .nav
-      color $gray2
-      border-bottom 1px solid darken($gray0, 10%)
-
       .options, .actions
         padding-right 2rem
         .item
@@ -24,36 +51,19 @@
           display inline-block
           margin 0 0.58rem
 
+    .secondary.nav
+      min-height 1.66rem
+      background-color lighten(#f0ede6, 13%)
 
     .breadcrumb
       margin-left -0.54rem
       padding 0 1.87rem
-      min-height 1.66rem
       line-height 1.42rem
       font-size 1.09em
       a
         color $gray2
       i
         color lightgray
+        color #fbfaf8
       span
         font-weight normal
-
-  footer
-    > .segment
-      padding 5em 0
-
-.global-header
-  margin 0
-  min-height 4.32rem
-  padding 0.02rem 1.08rem
-  border none
-  background lighten(lightgray, 64%)
-  box-shadow none
-  img.logo
-    float left
-    display inline-block
-  h1.logo-type
-    float left
-    margin 0.9rem 0 1.11rem 1.62rem
-    color gray
-    display inline-block

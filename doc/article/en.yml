@@ -1,14 +1,16 @@
 ---
-title: Scrolliris Concept Draft
+title: The Concept of Scrolliris
 subtitle: Why we develop Scrolliris
 outline: >-
   Scrolliris is a publication platform which utilizes text readability analysis through a browser widget. This demo shows how it works, using the application on the concept draft document of Scrolliris itself. The pop-up window at bottom left shows the results of the analysis in real time as a text readability heatmap.
-license: CC-BY-NC-SA-4.0
+license: GFDL-1.3
 copyright: 2017 Lupine Software LLC
+updated_at: 2017-11-05
 authors:
-  - Yasuhiro Asaka (grauwoelfchen)
+  - name: Yasuhiro Asaka
+    mail: yasuhiro.asaka@grauwoelfchen.net
 body: |+
-  ## TL;DR
+  ### TL;DR
 
   We are currently working on a public BETA version of [Scrolliris](
   https://scrolliris.com/).
@@ -125,5 +127,3 @@ body: |+
   - Zeno R.R. Davatz
   - Misaki Asaka
 
-
-  UPDATED AT: 2017-10-07
