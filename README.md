@@ -2,7 +2,7 @@
 
 `/bʁeːgɛnt͡s/`
 
-[![pipeline status][ci-build]][commit] [![coverage report][ci-cov]][commit]
+[![pipeline status][pipeline]][commit] [![coverage report][coverage]][commit]
 
 
 ```txt
@@ -36,6 +36,9 @@ https://gitlab.com/lupine-software/bregenz)
 ## Integrations
 
 * Typekit
+* Google Fonts
+* Scrolliris (tracking script)
+* Scrolliris (mini-heatmap widget)
 * Scrolliris (badge)
 
 
@@ -272,6 +275,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 See [LICENSE](LICENSE).
 
 
-[ci-build]: https://gitlab.com/lupine-software/bregenz/badges/master/build.svg
-[ci-cov]: https://gitlab.com/lupine-software/bregenz/badges/master/coverage.svg
+[pipeline]: https://gitlab.com/lupine-software/bregenz/badges/master/build.svg
+[coverage]: https://gitlab.com/lupine-software/bregenz/badges/master/coverage.svg
 [commit]: https://gitlab.com/lupine-software/bregenz/commits/master
