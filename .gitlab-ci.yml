@@ -50,11 +50,11 @@ check:
 
 build:
   stage: build
-  image: node:7.10.1
+  image: node:8.9.0
   variables:
     NODE_ENV: production
   before_script:
-    - npm install -g npm@latest
+    - npm install -g npm@5.5.1
     - node --version
     - npm --version
     - npm install --global gulp-cli
