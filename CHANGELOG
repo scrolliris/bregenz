@@ -1,5 +1,6 @@
 05 Nov 2017 Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>
 	* Update style and page layout
+	* Update Node.js to 8.9.0
 
 11 Oct 2017 Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>
 	* Add analyze job using codeclimate cli and gitlab ci
