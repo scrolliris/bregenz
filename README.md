@@ -28,8 +28,8 @@ https://gitlab.com/lupine-software/bregenz)
 
 ## Requirements
 
-* Python `3.5.4` (or `>= 2.7.13`)
-* Node.js `7.10.1` (npm `5.4.2`, for build assets)
+* Python `3.5.4` (or `>= 2.7.14`)
+* Node.js `8.9.0` (npm `>= 5.5.1`, for build assets)
 * [Konstanz](https://gitlab.com/lupine-software/konstanz) as git subtree
 
 
@@ -52,12 +52,12 @@ https://gitlab.com/lupine-software/bregenz)
 
 : node.js (e.g. nodeenv)
 (venv) % pip install nodeenv
-(venv) % nodeenv --python-virtualenv --with-npm --node=7.10.1
+(venv) % nodeenv --python-virtualenv --with-npm --node=8.9.0
 : re-activate for node.js at this time
 (venv) % source venv/bin/activate
-(venv) % npm install --global npm@5.4.2
+(venv) % npm install --global npm@5.5.1
 (venv) % npm --version
-5.4.2
+5.5.1
 ```
 
 ### Dependencies
