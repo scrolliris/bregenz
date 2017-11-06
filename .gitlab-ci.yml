@@ -54,7 +54,6 @@ build:
   variables:
     NODE_ENV: production
   before_script:
-    - npm install -g npm@5.5.1
     - node --version
     - npm --version
     - npm install --global gulp-cli
