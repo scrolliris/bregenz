@@ -1,13 +1,12 @@
 stages:
-  - check27
   - check
   - build
-  - test27
   - test
+  - coverage
   - codequality
 
 check27:
-  stage: check27
+  stage: check
   image: python:2.7.14
   variables:
     ENV: development
@@ -72,7 +71,7 @@ build:
     - tags
 
 test27:
-  stage: test27
+  stage: test
   image: python:2.7.14
   variables:
     ENV: test
@@ -83,7 +82,7 @@ test27:
     - pip --version
     - make setup
   script:
-    - make coverage
+    - make test
   cache:
     untracked: true
     paths:
@@ -103,11 +102,35 @@ test:
     - pip --version
     - make setup
   script:
+    - make test
+  cache:
+    untracked: true
+    paths:
+      - pip-cache
+  except:
+    - tags
+
+coverage:
+  stage: coverage
+  image: python:3.5.4
+  variables:
+    ENV: test
+    PIP_CACHE_DIR: pip-cache
+  before_script:
+    - pip install --upgrade pip setuptools
+    - python --version
+    - pip --version
+    - make setup
+  script:
     - make coverage
   cache:
     untracked: true
     paths:
       - pip-cache
+  artifacts:
+    untracked: true
+    paths:
+      - .coverage
   except:
     - tags
 
