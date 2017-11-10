@@ -56,13 +56,13 @@ build:
     - node --version
     - npm --version
     - npm install --global gulp-cli
-    - npm install
+    - npm install --ignore-scripts
   script:
     - make build
-  #cache:
-    #  untracked: true
-    #  paths:
-    #    - node_modules
+  cache:
+    untracked: true
+    paths:
+      - node_modules
   artifacts:
     untracked: true
     paths:
