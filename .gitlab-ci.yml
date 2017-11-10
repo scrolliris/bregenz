@@ -53,6 +53,7 @@ build:
   variables:
     NODE_ENV: production
   before_script:
+    - npm cache clean --force
     - node --version
     - npm --version
     - npm install --global gulp-cli
