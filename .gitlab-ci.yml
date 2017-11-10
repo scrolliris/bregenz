@@ -53,17 +53,16 @@ build:
   variables:
     NODE_ENV: production
   before_script:
-    - npm cache clean --force
     - node --version
     - npm --version
     - npm install --global gulp-cli
-    - npm install --ignore-scripts
+    - npm install
   script:
     - make build
-  cache:
-    untracked: true
-    paths:
-      - node_modules
+  #cache:
+    #  untracked: true
+    #  paths:
+    #    - node_modules
   artifacts:
     untracked: true
     paths:
