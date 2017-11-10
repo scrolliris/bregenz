@@ -10,6 +10,7 @@ pyramid==1.9.1
 pyramid_assetviews==1.0a3
 pyramid-beaker==0.8
 pyramid-mako==1.0.2
+pyramid_secure_response==0.0.4
 PyYAML==3.12
 WebOb==1.7.3
 wsgi-basic-auth==1.1.0

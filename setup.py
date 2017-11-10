@@ -20,6 +20,7 @@ requires = [
     'pyramid_assetviews',
     'pyramid_beaker',
     'pyramid_mako',
+    'pyramid_secure_response',
     'PyYAML',
     'webob',
 
