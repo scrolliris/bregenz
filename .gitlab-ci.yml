@@ -61,6 +61,8 @@ build:
     - make build
   cache:
     untracked: true
+    # per job per branch
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
       - node_modules
   artifacts:
