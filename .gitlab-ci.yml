@@ -3,7 +3,7 @@ stages:
   - build
   - test
   - coverage
-  - codequality
+  - quality
 
 check27:
   stage: check
@@ -21,6 +21,8 @@ check27:
     - make check
   cache:
     untracked: true
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - pip-cache
   except:
@@ -42,6 +44,8 @@ check:
     - make check
   cache:
     untracked: true
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - pip-cache
   except:
@@ -61,8 +65,8 @@ build:
     - make build
   cache:
     untracked: true
-    # per job per branch
-    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - node_modules
   artifacts:
@@ -87,6 +91,8 @@ test27:
     - make test
   cache:
     untracked: true
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - pip-cache
   except:
@@ -107,6 +113,8 @@ test:
     - make test
   cache:
     untracked: true
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - pip-cache
   except:
@@ -127,6 +135,8 @@ coverage:
     - make coverage
   cache:
     untracked: true
+    # per branch
+    key: "$CI_COMMIT_REF_NAME"
     paths:
       - pip-cache
   artifacts:
@@ -136,8 +146,8 @@ coverage:
   except:
     - tags
 
-codequality:
-  stage: codequality
+quality:
+  stage: quality
   image: docker:latest
   variables:
     DOCKER_DRIVER: overlay
