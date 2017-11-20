@@ -42,11 +42,11 @@ body: |+
 
   ## The need for better user statistics
 
-  There are many content management systems, many texts and articles in blogs and news, or as Ebook, are published every day.
+  There are many content management systems, and many texts and articles in blogs and news, or as Ebook, are published every day.
 
   Everybody knows how many groundless rumors and fake news are generated on the web every minute. We are bored with this spam that floods us with noise only to grab our attention. All these spam texts only exist to maximise clicks or Page Views (PV) and they end up making the internet a rather boring place.
 
-  We think that the focus on PV is really one of the main reasons that the internet is getting flooded with spam. Since the visibility of content and advertisment revenue depends so much on PV, there is a strong incentive to produce "click bait", interesting-looking links that turn out to be devoid of information. This situation comes from the historical fact that PV has been the only objective way for content providers to measure the user's attention and reaction to web content. In other words, the lack of other objective and general indicators led to the situation we see today. With Scrolliris, we introduce such objective indicators in a measurement mechanism that lets the author know not just how often their text has been accessed, but how intently it is being read.
+  We think that the focus on PV is really one of the main reasons that the internet is getting flooded with spam. Since the visibility of content and advertising revenue depends so much on PV, there is a strong incentive to produce "click bait", interesting-looking links that turn out to be devoid of information. This situation comes from the historical fact that PV has been the only objective way for content providers to measure the user's attention and reaction to web content. In other words, the lack of other objective and general indicators led to the situation we see today. With Scrolliris, we introduce such objective indicators in a measurement mechanism that lets the author know not just how often their text has been accessed, but how intently it is being read.
 
   ## We are about text, not social interaction
 
@@ -58,7 +58,7 @@ body: |+
 
   ### Mechanism
 
-  We measure the speed of reading and the visible range by recording touch and scroll events for a text that is displayed in a browser or on a mobile device. By statistical processing we make the data easy to analyse, and provide feedback to the author on reading intensity and the degree of perusal that could not be easily visualized so far.
+  We measure the speed of reading and the visible range by recording touch and scroll events for a text that is displayed in a browser or on a mobile device. By statistical processing we make the data easy to analyse, and provide feedback to the author on reading tendency and intensity that could not be easily visualized so far.
 
   The principle of this measurement is not a special new technology. Some similar mechanisms are sometimes used for advertisements as well. However, instead of focusing on a purpose for general web pages, we are specializing in measuring how text is being read using statistical methods, and focus on accuracy and usefulness for this application.
 
@@ -66,7 +66,7 @@ body: |+
   ### Privacy Protection
 
   We consider user's privacy the most important thing. In the measurement, only anonymous data is handled and processed.
-  Currently, a "Do Not Track" (DNT) setting is implemented in many modern web browsers. We respect the choice made by the user by this setting. When DNT is set, reading tendency and degree of perusal are not measured. We also aim to make Scrolliris transparent by providing the open source code and specifications and explain why and how tracking is done.
+  Currently, a "Do Not Track" (DNT) setting is implemented in many modern web browsers. We respect the choice made by the user by this setting. When DNT is set, reading tendency and intensity are not measured. We also aim to make Scrolliris transparent by providing the open source code and specifications and explain why and how tracking is done.
   Tracking tends to give a somewhat negative impression to the user. We want to reassure users by providing them with transparency and control.
 
   As described above, we are not a social networking service. Unlike many SNSs, we don't track who you are, what you are interested in, who your friends are, and what your personal convictions and beliefs are. It goes without saying that we do not sell or give away your data to anyone.
