@@ -22,15 +22,14 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 
 ## Repository
 
-[https://gitlab.com/lupine-software/bregenz](
-https://gitlab.com/lupine-software/bregenz)
+https://gitlab.com/scrolliris/bregenz
 
 
 ## Requirements
 
 * Python `3.5.4` (or `>= 2.7.14`)
 * Node.js `8.9.0` (npm `>= 5.5.1`, for build assets)
-* [Konstanz](https://gitlab.com/lupine-software/konstanz) as git subtree
+* [Konstanz](https://gitlab.com/scrolliris/konstanz) as git subtree
 
 
 ## Integrations
@@ -65,13 +64,13 @@ https://gitlab.com/lupine-software/bregenz)
 #### Konstanz
 
 See article project [Konstanz](
-https://gitlab.com/lupine-software/konstanz).
+https://gitlab.com/scrolliris/konstanz).
 
 Don't commit directly the changes on above article project into this repo.
 
 ```zsh
 : setup `doc`
-% git remote add konstanz https://gitlab.com/lupine-software/konstanz.git
+% git remote add konstanz https://gitlab.com/scrolliris/konstanz.git
 % git subtree add --prefix doc/article konstanz master
 
 : synchronize with updates into specified branch
@@ -275,6 +274,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 See [LICENSE](LICENSE).
 
 
-[pipeline]: https://gitlab.com/lupine-software/bregenz/badges/master/build.svg
-[coverage]: https://gitlab.com/lupine-software/bregenz/badges/master/coverage.svg
-[commit]: https://gitlab.com/lupine-software/bregenz/commits/master
+[pipeline]: https://gitlab.com/scrolliris/bregenz/badges/master/build.svg
+[coverage]: https://gitlab.com/scrolliris/bregenz/badges/master/coverage.svg
+[commit]: https://gitlab.com/scrolliris/bregenz/commits/master
