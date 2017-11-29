@@ -16,9 +16,9 @@ def add_template_util_renderer_globals(evt):
     util = getattr(req, 'util', None)
 
     if util is None and req is not None:
-        from bregenz import get_settings
+        from willisau import get_settings
 
-        util = get_settings()['bregenz.includes']['template_util'](ctx, req)
+        util = get_settings()['willisau.includes']['template_util'](ctx, req)
     evt['util'] = util
     evt['clean'] = clean
 
@@ -32,7 +32,7 @@ def clean(**kwargs):  # type (dict) -> 'function'
     ${'<a href="/"><i>link</i></a>'|n,clean(tags=['a'], attributes=['href'])}
     ```
 
-    >>> from bregenz.utils.template import clean
+    >>> from willisau.utils.template import clean
 
     >>> type(clean(tags=['a'], attributes=['href']))
     <class 'function'>
@@ -51,7 +51,7 @@ class TemplateUtil(object):
     def __init__(self, ctx, req, **kwargs):
         self.ctx, self.req = ctx, req
 
-        from bregenz.env import Env
+        from willisau.env import Env
         self._env = Env()
 
         if getattr(req, 'util', None) is None:
@@ -102,10 +102,10 @@ class TemplateUtil(object):
         return self.req.matchdict == matchdict
 
     def static_url(self, filepath):
-        return self.req.static_url('bregenz:../static/' + filepath)
+        return self.req.static_url('willisau:../static/' + filepath)
 
     def static_path(self, filepath):
-        return self.req.static_path('bregenz:../static/' + filepath)
+        return self.req.static_path('willisau:../static/' + filepath)
 
     def hashed_asset_url(self, filepath):
         return self.static_url(self.manifest_json.get(filepath, filepath))

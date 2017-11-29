@@ -1,6 +1,6 @@
 import sys
 
-from bregenz.env import Env
+from willisau.env import Env
 
 
 def main(argv=None, quiet=False):

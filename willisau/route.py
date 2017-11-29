@@ -73,11 +73,11 @@ def includeme(config):
     filenames = [f for f in ('robots.txt', 'humans.txt', 'favicon.ico')
                  if path.isfile((static_dir + '/{}').format(f))]
     config.add_asset_views(
-        'bregenz:../static', filenames=filenames, http_cache=cache_max_age)
+        'willisau:../static', filenames=filenames, http_cache=cache_max_age)
 
     # static files at /assets/*
     config.add_static_view(
-        name='assets', path='bregenz:../static/', cache_max_age=cache_max_age)
+        name='assets', path='willisau:../static/', cache_max_age=cache_max_age)
 
     subdomain = subdomain_manager_factory(config)
 

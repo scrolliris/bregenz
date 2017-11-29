@@ -5,7 +5,7 @@ import sys
 from pyramid.decorator import reify
 from pyramid.request import Request
 
-from bregenz.env import Env
+from willisau.env import Env
 
 __all__ = ('CustomRequest')
 
@@ -76,7 +76,7 @@ class CustomRequest(Request):  # pylint: disable=too-many-ancestors
 
     @property
     def settings(self):
-        from bregenz import get_settings
+        from willisau import get_settings
 
         return get_settings() or {}
 

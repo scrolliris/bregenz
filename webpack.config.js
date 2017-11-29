@@ -18,7 +18,7 @@ var stylusBundler = new ExtractTextPlugin(filename + '.css')
   , svgBundler = new ExtractTextPlugin('img/' + filename + '.svg')
   ;
 
-var appName = 'bregenz'
+var appName = 'willisau'
   ;
 
 var config = {

@@ -1,7 +1,7 @@
 from pyramid.httpexceptions import HTTPMovedPermanently
 from pyramid.view import notfound_view_config
 
-from bregenz.views import tpl
+from willisau.views import tpl
 
 
 @notfound_view_config(renderer=tpl('404.mako'),

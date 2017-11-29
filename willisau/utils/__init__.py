@@ -1,7 +1,7 @@
 from pyramid.events import subscriber
 from pyramid.events import BeforeRender
 
-from bregenz.env import Env
+from willisau.env import Env
 
 
 @subscriber(BeforeRender)

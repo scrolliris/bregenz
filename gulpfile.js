@@ -11,7 +11,7 @@ var gulp = require('gulp')
   , sequence = require('run-sequence')
   ;
 
-var appName = 'bregenz';
+var appName = 'willisau';
 var assetsDir = path.resolve(__dirname, appName + '/assets/');
 
 // -- [shared tasks]

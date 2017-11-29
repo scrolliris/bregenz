@@ -52,7 +52,7 @@
     <%def name="add_icons(svg_file)">
     ## img/FILE.[hash].svg
     <% svg_path = req.util.manifest_json.get(svg_file, 'img/' + svg_file) %>
-    <%include file='bregenz:../static/${svg_path}'/>
+    <%include file='willisau:../static/${svg_path}'/>
     </%def>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">

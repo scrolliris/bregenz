@@ -2,7 +2,7 @@ from pyramid.config import Configurator
 from pyramid.util import DottedNameResolver
 from pyramid.threadlocal import get_current_registry
 
-from bregenz.env import Env
+from willisau.env import Env
 
 
 def get_settings():
@@ -14,8 +14,8 @@ def resolve_settings(settings):
     """Resolving settings."""
     s = settings.copy()
     settings_defaults = {
-        'bregenz.includes': {
-            'template_util': 'bregenz.utils.template.TemplateUtil',
+        'willisau.includes': {
+            'template_util': 'willisau.utils.template.TemplateUtil',
         }
     }
     for k, v in settings_defaults.items():
@@ -26,7 +26,7 @@ def resolve_settings(settings):
     return s
 
 
-def resolve_names(settings, directive='bregenz.includes'):
+def resolve_names(settings, directive='willisau.includes'):
     """Resolves dotted module names."""
     s = settings.copy()
     for k, v in s[directive].items():
@@ -61,7 +61,7 @@ def resolve_env_vars(settings):
 
 
 def main(_global_config, **settings):
-    from bregenz.request import CustomRequest
+    from willisau.request import CustomRequest
 
     config = Configurator(settings=resolve_settings(dict(settings)))
 

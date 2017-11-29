@@ -17,7 +17,7 @@ import bleach
 import markdown
 from pyramid.view import view_config
 
-from bregenz.views import tpl
+from willisau.views import tpl
 
 
 def render_content(article_path):  # type (str) -> 'function'

@@ -71,9 +71,9 @@ production_requires = [
 ]
 
 setup(
-    name='bregenz',
+    name='willisau',
     version='0.0.1',
-    description='bregenz',
+    description='willisau',
     long_description=README + '\n\n' + CHANGES,
     classifiers=[
         'Programming Language :: Python',
@@ -94,16 +94,11 @@ setup(
         'production': production_requires,
     },
     install_requires=requires,
-    message_extractors={'bregenz': [
-        ('**.py', 'python', None),
-        ('templates/**.mako', 'mako', {'input_encoding': 'utf-8'}),
-        ('static/**', 'ignore', None),
-    ]},
     entry_points="""\
     [paste.app_factory]
-    main = bregenz:main
+    main = willisau:main
     [console_scripts]
-    bregenz_pserve = bregenz.scripts.pserve:main
-    bregenz_pstart = bregenz.scripts.pstart:main
+    willisau_pserve = willisau.scripts.pserve:main
+    willisau_pstart = willisau.scripts.pstart:main
     """,
 )

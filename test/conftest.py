@@ -12,9 +12,9 @@ import pytest
 
 @pytest.fixture(scope='session')
 def dotenv():
-    from bregenz.env import Env
+    from willisau.env import Env
 
-    # same as bregenz:main
+    # same as willisau:main
     dotenv_file = os.path.join(os.getcwd(), '.env')
     Env.load_dotenv_vars(dotenv_file)
 
@@ -23,7 +23,7 @@ def dotenv():
 
 @pytest.fixture(scope='session')
 def env(dotenv):
-    from bregenz.env import Env
+    from willisau.env import Env
     return Env()
 
 
@@ -89,12 +89,12 @@ def config(request, settings):
     config.include('pyramid_beaker')
     config.include('pyramid_mako')
 
-    config.include('bregenz.views')
+    config.include('willisau.views')
 
-    config.include('bregenz.route')
+    config.include('willisau.route')
 
     from pyramid.events import BeforeRender
-    from bregenz.utils.template import add_template_util_renderer_globals
+    from willisau.utils.template import add_template_util_renderer_globals
 
     config.add_subscriber(add_template_util_renderer_globals, BeforeRender)
 
@@ -125,7 +125,7 @@ def dummy_request(extra_environ):
 
 @pytest.fixture(scope='session')
 def _app(raw_settings):
-    from bregenz import main
+    from willisau import main
     global_config = {
         '__file__': raw_settings['__file__']
     }

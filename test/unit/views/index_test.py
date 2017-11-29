@@ -26,7 +26,7 @@ def test_view_index_view_date_timezone(dummy_request, mocker):
     DummyDatetime.now = dummy_now.__get__(DummyDatetime)  # bind
     datetime.datetime = DummyDatetime
 
-    from bregenz.views.action import index
+    from willisau.views.action import index
     res = index(dummy_request)
     assert isinstance(res['view_date'], str)
     # it must be in UTC
@@ -34,7 +34,7 @@ def test_view_index_view_date_timezone(dummy_request, mocker):
 
 
 def test_view_index(dummy_request):
-    from bregenz.views.action import index
+    from willisau.views.action import index
 
     res = index(dummy_request)
     assert isinstance(res, dict)

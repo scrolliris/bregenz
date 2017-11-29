@@ -1,20 +1,18 @@
-# Bregenz
+# Willisau
 
-`/bʁeːgɛnt͡s/`
+`/víliʒau/`
 
 [![pipeline status][pipeline]][commit] [![coverage report][coverage]][commit]
 
 
 ```txt
- , __
-/|/  \
- | __/ ,_    _   __,  _   _  _    __
- |   \/  |  |/  /  | |/  / |/ |  / / _
- |(__/   |_/|__/\_/|/|__/  |  |_/ /_/
-                  /|               /|
-                  \|               \|
+ _               _   _
+(_|   |   |_/o  | | | | o
+  |   |   |     | | | |     ,   __,
+  |   |   |  |  |/  |/  |  / \_/  |  |   |
+   \_/ \_/   |_/|__/|__/|_/ \/ \_/|_/ \_/|_/
 
-Bregenz; BaRe concEpt paGE applicatioN bregenZ
+Willisau; the WILL and our concept Integrated Server Application willisaU
 ```
 
 The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
@@ -22,7 +20,7 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 
 ## Repository
 
-https://gitlab.com/scrolliris/bregenz
+https://gitlab.com/scrolliris/willisau
 
 
 ## Requirements
@@ -87,7 +85,7 @@ Use `waitress` as wsgi server.
 See `Makefile`.
 
 ```zsh
-% cd /path/to/bregenz
+% cd /path/to/willisau
 % source venv/bin/activate
 
 : set env
@@ -219,7 +217,7 @@ This project is distributed as various licenses by parts.
 
 `GFDL-1.3`
 
-The files in the `bregenz/doc` directory are distributed as
+The files in the `willisau/doc` directory are distributed as
 GNU Free Documentation License. (version 1.3)
 
 ```txt
@@ -254,7 +252,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 `AGPL-3.0`
 
 ```
-Bregenz
+Willisau
 Copyright (c) 2017 Lupine Software LLC
 
 This is free software: You can redistribute it and/or modify
@@ -274,6 +272,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 See [LICENSE](LICENSE).
 
 
-[pipeline]: https://gitlab.com/scrolliris/bregenz/badges/master/build.svg
-[coverage]: https://gitlab.com/scrolliris/bregenz/badges/master/coverage.svg
-[commit]: https://gitlab.com/scrolliris/bregenz/commits/master
+[pipeline]: https://gitlab.com/scrolliris/willisau/badges/master/build.svg
+[coverage]: https://gitlab.com/scrolliris/willisau/badges/master/coverage.svg
+[commit]: https://gitlab.com/scrolliris/willisau/commits/master

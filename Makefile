@@ -11,7 +11,7 @@ ifeq (, $(NODE_ENV))
 	NODE_ENV := development
 endif
 
-app := bregenz
+app := willisau
 
 # -- installation
 

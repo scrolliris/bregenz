@@ -6,8 +6,8 @@ from pyramid.request import Request  # noqa
 
 def tpl(path, namespace=None):  # type (str, List[str, None]) -> str
     if namespace:
-        return 'bregenz:templates/{0:s}/{1:s}'.format(namespace, path)
-    return 'bregenz:templates/{0:s}'.format(path)
+        return 'willisau:templates/{0:s}/{1:s}'.format(namespace, path)
+    return 'willisau:templates/{0:s}'.format(path)
 
 
 def subdomain(request):  # type (Request) -> Union[None, str]
@@ -22,9 +22,9 @@ def subdomain(request):  # type (Request) -> Union[None, str]
 
 
 def includeme(config):  # type (Configurator) -> None
-    """Initializes the view for a bregenz app.
+    """Initializes the view for a willisau app.
 
-    Activate this setup using ``config.include('bregenz.views')``.
+    Activate this setup using ``config.include('willisau.views')``.
     """
     # make request.subdomain available for use in app
     config.add_request_method(subdomain, 'subdomain', reify=True)

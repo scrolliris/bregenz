@@ -1,6 +1,6 @@
 import logging
 
-from bregenz.utils.localization import get_translator_function
+from willisau.utils.localization import get_translator_function
 
 
 def config_get(registry):
