@@ -27,7 +27,7 @@ https://gitlab.com/scrolliris/willisau
 
 * Python `3.5.4` (or `>= 2.7.14`)
 * Node.js `8.9.0` (npm `>= 5.5.1`, for build assets)
-* [Konstanz](https://gitlab.com/scrolliris/konstanz) as git subtree
+* [Ettiswil](https://gitlab.com/scrolliris/ettiswil) as git subtree
 
 
 ## Integrations
@@ -59,20 +59,20 @@ https://gitlab.com/scrolliris/willisau
 
 ### Dependencies
 
-#### Konstanz
+#### Ettiswil
 
-See article project [Konstanz](
-https://gitlab.com/scrolliris/konstanz).
+See article project [Ettiswil](
+https://gitlab.com/scrolliris/ettiswil).
 
 Don't commit directly the changes on above article project into this repo.
 
 ```zsh
 : setup `doc`
-% git remote add konstanz https://gitlab.com/scrolliris/konstanz.git
-% git subtree add --prefix doc/article konstanz master
+% git remote add ettiswil https://gitlab.com/scrolliris/ettiswil.git
+% git subtree add --prefix doc/article ettiswil master
 
 : synchronize with updates into specified branch
-% git pull -s subtree -Xsubtree=doc/article konstanz master
+% git pull -s subtree -Xsubtree=doc/article ettiswil master
 
 : subtree list
 % git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq
