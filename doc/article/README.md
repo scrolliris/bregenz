@@ -17,12 +17,12 @@ Konstanz; Keen cONcept STANds for our Zeal
 
 This is articles for the Scrolliris [Demo](
 https://try.scrolliris.com/) which called as [Bregenz](
-https://gitlab.com/lupine-software/bregenz) (code name).
+https://gitlab.com/scrolliris/bregenz) (code name).
 
 
 ## Repository
 
-https://gitlab.com/lupine-software/konstanz.git
+https://gitlab.com/scrolliris/konstanz.git
 
 
 ## Format
@@ -37,7 +37,7 @@ Nothing. But you need to check markdown output in `LANG.yml`.
 
 ## Support
 
-If you have any question, email us `feedback@lupine-software.com`, or
+If you have any question, email us `support@scrolliris.com`, or
 contact [@scrolliris](https://twitter.com/scrolliris) on Twitter.
 
 

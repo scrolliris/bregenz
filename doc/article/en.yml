@@ -91,7 +91,7 @@ body: |+
 
   ## Current status
 
-  Our [sdk and libraries](https://gitlab.com/lupine-software) are ready.
+  Our [sdk and libraries](https://gitlab.com/scrolliris) are ready.
 
   Currently we are working on a public beta version. You can for now integrate text readability analysis into your document (for example, a blog, website or any web-based text). [Sign up](https://scrolliris.com/signup) now!
 
@@ -109,14 +109,14 @@ body: |+
 
   We would deeply appreciate feedback from you!
 
-  `feedback@lupine-software.com`
+  `support@scrolliris.com`
   &nbsp; or &nbsp; [@scrolliris](https://twitter.com/scrolliris)
 
 
   ### Source code
 
-  This document and server application is available from [Lupine Software](
-  https://gitlab.com/lupine-software) on GitLab.
+  This document and server application is available from [Scrolliris/Bregenz](
+  https://gitlab.com/scrolliris/bregenz) on GitLab.com.
 
   ## Contributors
 
