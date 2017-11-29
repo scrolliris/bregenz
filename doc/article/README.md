@@ -1,28 +1,26 @@
-# Konstanz
+# Ettiswil
 
-`/ˈkɔnʃtants/`
+`/ɛ́ttɪʃvɪl/`
 
 
 ```txt
- ,
-/|   /
- |__/   __   _  _    , _|_  __,   _  _    __
- | \   /  \_/ |/ |  / \_|  /  |  / |/ |  / / _
- |  \_/\__/   |  |_/ \/ |_/\_/|_/  |  |_/ /_/
-                                           /|
-                                           \|
+ ___                          _
+/ (_)      o              o  | |
+\__ _|__|_     ,             | |
+/    |  |  |  / \_|  |  |_|  |/
+\___/|_/|_/|_/ \/  \/ \/  |_/|__/
 
-Konstanz; Keen cONcept STANds for our Zeal
+Ettiswil; concEpT arTIcleS WItten with Light weight markup language
 ```
 
 This is articles for the Scrolliris [Demo](
-https://try.scrolliris.com/) which called as [Bregenz](
-https://gitlab.com/scrolliris/bregenz) (code name).
+https://try.scrolliris.com/) which called as [Willisau](
+https://gitlab.com/scrolliris/willisau) (code name).
 
 
 ## Repository
 
-https://gitlab.com/scrolliris/konstanz.git
+https://gitlab.com/scrolliris/willisau.git
 
 
 ## Format
@@ -56,7 +54,7 @@ Misaki Asaka
 ## License
 
 ```txt
-Konstanz
+Ettiswil
 Copyright (c) 2017 Lupine Software LLC
 ```
 
