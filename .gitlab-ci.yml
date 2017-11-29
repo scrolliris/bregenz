@@ -59,10 +59,12 @@ build:
   before_script:
     - node --version
     - npm --version
-    - npm install --global gulp-cli
-    - npm install --ignore-scripts
+      #- npm install --global gulp-cli
+      #- npm install --ignore-scripts
   script:
-    - make build
+    #- make build
+    - rm -fr node_modules
+    - echo 'build'
   cache:
     untracked: true
     # per branch
