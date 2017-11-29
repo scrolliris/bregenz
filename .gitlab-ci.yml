@@ -3,7 +3,7 @@ stages:
   - build
   - test
   - coverage
-  - quality
+  - codequality
 
 check27:
   stage: check
@@ -148,20 +148,26 @@ coverage:
   except:
     - tags
 
-quality:
-  stage: quality
+codequality:
+  stage: codequality
   image: docker:latest
-  variables:
-    DOCKER_DRIVER: overlay
   services:
     - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay
   before_script:
-    - docker pull codeclimate/codeclimate
+    # 0.70.1 fails
+    - docker pull codeclimate/codeclimate:0.70.0
     - docker run --env CODECLIMATE_CODE="$PWD"
       --volume "$PWD":/code
       --volume /var/run/docker.sock:/var/run/docker.sock
       --volume /tmp/cc:/tmp/cc
-      codeclimate/codeclimate init
+      codeclimate/codeclimate validate-config
+    - docker run --env CODECLIMATE_CODE="$PWD"
+      --volume "$PWD":/code
+      --volume /var/run/docker.sock:/var/run/docker.sock
+      --volume /tmp/cc:/tmp/cc
+      codeclimate/codeclimate engines:install
   script:
     - docker run --env CODECLIMATE_CODE="$PWD"
       --volume "$PWD":/code
