@@ -28,7 +28,7 @@ var config = {
       '[name].[chunkhash].js' : '[name].js')
   }
 , module: {
-    loaders: [{ // semantic-ui
+    loaders: [{
       test: /\.css$/
     , loader: stylusBundler.extract(['css'])
     }, {
@@ -56,6 +56,7 @@ var config = {
     extensions: ['', '.css', '.js', '.svg']
   , alias: {
       'styr\.css$': 'styr/dst/styr.min.css'
+    , 'fontfaceobserver\.js$': 'fontfaceobserver/fontfaceobserver.js'
     , 'open-iconic\.svg$': 'open-iconic/sprite/open-iconic.min.svg'
     }
   }

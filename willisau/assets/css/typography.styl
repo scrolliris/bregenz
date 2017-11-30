@@ -1,45 +1,108 @@
-body
+body.slab-loaded
+  font-family 'Roboto Slab', serif
+  word-spacing 0
+  letter-spacing 0
   .logo
-    span.logo-type
+    .logo-type
+      font-family 'Roboto Slab', serif
+      word-spacing 0
+      letter-spacing 0
+
+  .nav
+    font-family 'Roboto Slab', serif
+    word-spacing 0
+    letter-spacing 0
+
+  article
+    .body
+      font-family 'Roboto Slab', serif
+      word-spacing 0
+      letter-spacing 0
+
+
+body.sans-loaded
+  .meta
+    font-family 'Open Sans', sans-serif
+    word-spacing 0
+    letter-spacing 0
+
+  article
+    .extra.info,
+    .outline,
+    .title,
+    .subtitle
+      font-family 'Open Sans', sans-serif
+      word-spacing 0
+      letter-spacing 0
+    .body
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+        font-family 'Open Sans', sans-serif
+        word-spacing 0
+        letter-spacing 0
+
+
+body
+  // roboto slab
+  font-family serif
+  word-spacing -0.25px
+  letter-spacing -0.15px
+  .logo
+    .logo-type
+      // roboto slab
+      font-family serif
+      word-spacing -0.25px
+      letter-spacing -0.15px
+      font-weight normal
+      font-size 0.68em
+      line-height 1.28rem
       padding 0
       vertical-align top
       min-height 1.1rem
-      line-height 1.28rem
-      font-size 0.68em
-      font-weight normal
-      font-family 'Roboto Slab', serif
 
 .nav
   font-size 0.88em
-  font-family 'Roboto Slab', serif
+  // roboto slab
+  font-family serif
+  word-spacing -0.25px
+  letter-spacing -0.15px
 
 .meta
-  font-family 'Open Sans', Helvetica neue, Arial, sans-serif
+  // open sans
+  font-family sans-serif
+  word-spacing -0.25px
+  letter-spacing -0.4px
   h3
     font-weight normal
-
-  .author
-    font-size 0.89em
 
   .copy
     font-size 0.89em
 
 article
+  .extra.info,
+  .outline,
+  .title,
+  .subtitle
+    // open sans
+    font-family sans-serif
+    word-spacing -0.25px
+    letter-spacing -0.4px
+
   .extra.info
-    font-family 'Open Sans', serif
     .author,
     .published_at
       line-height 1.46em
-      font-size 0.88rem
+      font-size 0.96em
 
   .title,
   .subtitle
-    font-family 'Roboto Slab', serif
     font-style normal
 
   .title
-    font-family 'Open Sans', Helvetica neue, Arial, sans-serif
-    font-weight 300
     font-size 1.93em
 
   .subtitle
@@ -48,18 +111,20 @@ article
     line-height 1.445em
 
   .outline
-    font-family 'Roboto Slab', serif
+    font-family serif
+    word-spacing -0.25px
+    letter-spacing -0.15px
     font-style normal
     font-weight 100
-    font-size 1.08em
-    line-height 1.16em
+    font-size 1.12em
+    line-height 1.28em
     hyphens auto
 
   .body
-    font-family 'Roboto Slab', serif
-    font-size 1.32em
+    font-family serif
+    font-size 1.74em
     font-style normal
-    line-height 1.103em
+    line-height 1.318em
     font-weight 100
     hyphens auto
     h1,
@@ -68,8 +133,8 @@ article
     h4,
     h5,
     h6
-      font-family 'Open Sans', Helvetica neue, Arial, sans-serif
-      font-weight bold
+      font-family sans
+      font-weight normal
       letter-spacing 0.0014em
     h1
       margin 1.82rem 0 0.21rem 0
@@ -96,7 +161,7 @@ article
       line-height 1.34em
       letter-spacing 0.0012em
     strong
-      font-weight 600
+      font-weight bold
       display inline-block
       padding 0 3px
     ul
@@ -115,6 +180,14 @@ article
       border 1px solid $gray1
       border-radius 2px
 
+#application
+  main
+    .breadcrumb
+      line-height 1.42rem
+      font-size 1.09em
+      span
+        font-weight normal
+
 @media only screen and (max-width: 780px)
   /* same with normal size (column-n-N) */
   .secondary.nav
@@ -126,7 +199,7 @@ article
       font-size 1.18em
     .outline
       font-size 0.96em
-      line-height 1.08em
+      line-height 1.22em
     .body
       font-size 1.12em
       h1

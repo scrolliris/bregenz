@@ -24,9 +24,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="${req.util.static_path('img/favicon-32.png')}">
     <link rel="icon" type="image/png" sizes="16x16" href="${req.util.static_path('img/favicon-16.png')}">
     <link rel="author" type="text/plain" href="/humans.txt">
-    <style>body{background-color:#ffffff;}</style>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto+Slab:300" rel="stylesheet">
     <link rel="stylesheet" href="${req.util.hashed_asset_url('master.css')}">
+    <style>body{background-color:#ffffff;}</style>
+    <style>.not-ready{visibility:hidden;}</style>
+    <script><%include file='willisau:assets/_fouc.js'/></script>
   </head>
   <body id="application">
     <div id="wrapper">

@@ -59,7 +59,7 @@
                   if 'mail' in a and a['mail']:
                       m.update(a['mail'])
                       author += '<img class="avatar" src="https://www.gravatar.com/avatar/{}.jpg?s=32">'.format(m.hexdigest())
-                  author += '<span class="name">{}</span>'.format(a['name'])
+                  author += '<span class="rounded label name">{}</span>'.format(a['name'])
                   yield author
         %>
         <article>
@@ -67,10 +67,6 @@
           <div class="extra info">
             <div class="author">${',&nbsp;'.join(authors_with_avator(content['authors']))|n,trim}</div>
             <div class="published_at">published in <span class="class">Concepts of science and knowledge</span></div>
-            <div class="link mobile hidden">
-              <% render_icon('arrow-right', '0 0 8 8', 8, 8) %>Back to:
-              <a href="https://about.scrolliris.com/">https://about.scrolliris.com/</a>
-            </div>
             <div class="badge">
               <a href="https://about.scrolliris.com/"><img src="https://img.scrolliris.io/badge/tracking/on.svg" alt="tracking status"></a>
             </div>
