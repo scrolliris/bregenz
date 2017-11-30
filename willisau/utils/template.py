@@ -1,5 +1,6 @@
 from os import path
 import json
+import re
 
 from bleach import clean as _clean
 from markupsafe import Markup
@@ -7,6 +8,8 @@ from markupsafe import Markup
 from pyramid.decorator import reify
 from pyramid.events import subscriber
 from pyramid.events import BeforeRender
+
+UNSLASH_PATTERN = re.compile(r'^\/|\/$')
 
 
 @subscriber(BeforeRender)
@@ -75,10 +78,6 @@ class TemplateUtil(object):
         return data
 
     @reify
-    def typekit_id(self):
-        return self._env.get('TYPEKIT_ID', '')
-
-    @reify
     def scrolliris_project_id(self):
         return self._env.get('SCROLLIRIS_PROJECT_ID', '')
 
@@ -101,11 +100,25 @@ class TemplateUtil(object):
     def is_matched(self, matchdict):
         return self.req.matchdict == matchdict
 
-    def static_url(self, filepath):
-        return self.req.static_url('willisau:../static/' + filepath)
+    def static_url(self, filepath):  # type: (str) -> str
+        from willisau.route import STATIC_DIR
+
+        def get_bucket_info(name):
+            part = self.req.settings.get('storage.bucket_{0:s}'.format(name))
+            if not part:
+                # returns invalid path
+                return ''
+            return re.sub(UNSLASH_PATTERN, '', part)
+
+        if self._env.is_production:
+            h, n, p = [get_bucket_info(x) for x in ('host', 'name', 'path')]
+            return 'https://{0:s}/{1:s}/{2:s}/{3:s}'.format(h, n, p, filepath)
+        return self.req.static_url(STATIC_DIR + '/' + filepath)
 
     def static_path(self, filepath):
-        return self.req.static_path('willisau:../static/' + filepath)
+        from willisau.route import STATIC_DIR
+
+        return self.req.static_path(STATIC_DIR + '/' + filepath)
 
     def hashed_asset_url(self, filepath):
         return self.static_url(self.manifest_json.get(filepath, filepath))

@@ -4,6 +4,9 @@ from os import path
 from .env import Env
 
 
+STATIC_DIR = 'willisau:../static'
+
+
 class SubdomainPredicate(object):
     def __init__(self, val, _config):
         self.val = val
@@ -69,15 +72,14 @@ def includeme(config):
     cache_max_age = 3600 if env.is_production else 0
 
     # static files at /*
-    static_dir = path.join(path.dirname(path.abspath(__file__)), '../static')
     filenames = [f for f in ('robots.txt', 'humans.txt', 'favicon.ico')
-                 if path.isfile((static_dir + '/{}').format(f))]
+                 if path.isfile((STATIC_DIR + '/{}').format(f))]
     config.add_asset_views(
-        'willisau:../static', filenames=filenames, http_cache=cache_max_age)
+        STATIC_DIR, filenames=filenames, http_cache=cache_max_age)
 
     # static files at /assets/*
     config.add_static_view(
-        name='assets', path='willisau:../static/', cache_max_age=cache_max_age)
+        name='assets', path=STATIC_DIR, cache_max_age=cache_max_age)
 
     subdomain = subdomain_manager_factory(config)
 

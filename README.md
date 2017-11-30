@@ -32,7 +32,6 @@ https://gitlab.com/scrolliris/willisau
 
 ## Integrations
 
-* Typekit
 * Google Fonts
 * Scrolliris (tracking script)
 * Scrolliris (mini-heatmap widget)

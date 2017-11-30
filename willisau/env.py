@@ -50,6 +50,9 @@ class Env(object):
             'ssl_suggestion.flash_message': 'SSL_SUGGESTION_FLASH_MESSAGE',
             'ssl_suggestion.hsts_header': 'SSL_SUGGESTION_HSTS_HEADER',
             'ssl_suggestion.proto_header': 'SSL_SUGGESTION_PROTO_HEADER',
+            'storage.bucket_host': 'STORAGE_BUCKET_HOST',
+            'storage.bucket_name': 'STORAGE_BUCKET_NAME',
+            'storage.bucket_path': 'STORAGE_BUCKET_PATH',
             'wsgi.url_scheme': 'WSGI_URL_SCHEME',
             'wsgi.auth_credentials': 'WSGI_AUTH_CREDENTIALS',
         }

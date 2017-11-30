@@ -61,8 +61,6 @@
     <% add_icons('master.svg') %>
     </svg>
 
-    ## <%include file='_font.mako'/>
-
     <%block name='script'>
     <script src="${util.hashed_asset_url('master.js')}" charset="utf-8"></script>
     </%block>
