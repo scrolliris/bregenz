@@ -124,7 +124,7 @@ def dummy_request(extra_environ):
 # -- functional test
 
 @pytest.fixture(scope='session')
-def _app(raw_settings):
+def router(raw_settings):
     from willisau import main
     global_config = {
         '__file__': raw_settings['__file__']
@@ -135,7 +135,7 @@ def _app(raw_settings):
 
 
 @pytest.fixture(scope='session')
-def dummy_app(_app, extra_environ):
+def dummy_app(router, extra_environ):
     from webtest import TestApp
 
     return TestApp(_app, extra_environ=extra_environ)
