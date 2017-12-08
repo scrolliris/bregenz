@@ -35,8 +35,8 @@ class Env(object):
             if env_v is not None:
                 os.environ[v] = env_v
 
-    @classmethod
-    def settings_mappings(cls):  # type (Env) -> dict
+    @staticmethod
+    def settings_mappings():  # type () -> dict
         return {
             # Note: these values are updated if exist but not empty
             'domain': 'DOMAIN',
