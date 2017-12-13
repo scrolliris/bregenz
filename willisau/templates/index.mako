@@ -68,7 +68,7 @@
             <div class="author">${',&nbsp;'.join(authors_with_avator(content['authors']))|n,trim}</div>
             <div class="published_at">published in <span class="class">Concepts of science and knowledge</span></div>
             <div class="badge">
-              <a href="https://about.scrolliris.com/"><img src="https://img.scrolliris.io/badge/tracking/on.svg" alt="tracking status"></a>
+              <a href="https://about.scrolliris.com/"><img src="https://img.scrolliris.com/badge/tracking/on.svg" alt="tracking status"></a>
             </div>
           </div>
           <p class="outline">${content['outline']}</p>
