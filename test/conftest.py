@@ -138,4 +138,4 @@ def router(raw_settings):
 def dummy_app(router, extra_environ):
     from webtest import TestApp
 
-    return TestApp(_app, extra_environ=extra_environ)
+    return TestApp(router, extra_environ=extra_environ)
