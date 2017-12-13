@@ -107,7 +107,7 @@
       , apiKey: '${util.scrolliris_write_key}'
       }
     , settings = {
-        endpointURL: 'https://api.scrolliris.io/v1.0/projects/'+config.projectId+'/events/read'
+        endpointURL: 'https://api.scrolliris.com/v1.0/projects/'+config.projectId+'/events/read'
       }
     , options = {}
     ;
@@ -121,7 +121,7 @@
       , apiKey: '${util.scrolliris_read_key}'
       }
     , settings = {
-        endpointURL: 'https://api.scrolliris.io/v1.0/projects/'+config.projectId+'/results/read?api_key='+config.apiKey
+        endpointURL: 'https://api.scrolliris.com/v1.0/projects/'+config.projectId+'/results/read?api_key='+config.apiKey
       }
     , options = {
         widget: 'inactive'
