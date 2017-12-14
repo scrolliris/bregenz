@@ -104,7 +104,7 @@ class TemplateUtil(object):
         from willisau.route import STATIC_DIR
 
         def get_bucket_info(name):
-            part = self.req.settings.get('storage.bucket_{0:s}'.format(name))
+            part = self.req.settings.get('bucket.{0:s}'.format(name))
             if not part:
                 # returns invalid path
                 return ''
