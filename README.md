@@ -26,7 +26,7 @@ https://gitlab.com/scrolliris/willisau
 ## Requirements
 
 * Python `3.5.4` (or `>= 2.7.14`)
-* Node.js `8.9.0` (npm `>= 5.5.1`, for build assets)
+* Node.js `8.9.0` (npm `>= 5.6.0`, for build assets)
 * [Ettiswil](https://gitlab.com/scrolliris/ettiswil) as git subtree
 
 
@@ -51,9 +51,9 @@ https://gitlab.com/scrolliris/willisau
 (venv) % nodeenv --python-virtualenv --with-npm --node=8.9.0
 : re-activate for node.js at this time
 (venv) % source venv/bin/activate
-(venv) % npm install --global npm@5.5.1
+(venv) % npm install --global npm@5.6.0
 (venv) % npm --version
-5.5.1
+5.6.0
 ```
 
 ### Dependencies
