@@ -1,12 +1,12 @@
-# Scrolliris Demo
+# Scrolliris Concept
 
 Code Name: `Willisau /víliʒau/`
 
 [![pipeline status][pipeline]][commit] [![coverage report][coverage]][commit]
 
-[pipeline]: https://gitlab.com/scrolliris/scrolliris-demo/badges/master/build.svg
-[coverage]: https://gitlab.com/scrolliris/scrolliris-demo/badges/master/coverage.svg
-[commit]: https://gitlab.com/scrolliris/scrolliris-demo/commits/master
+[pipeline]: https://gitlab.com/scrolliris/scrolliris-concept/badges/master/build.svg
+[coverage]: https://gitlab.com/scrolliris/scrolliris-concept/badges/master/coverage.svg
+[commit]: https://gitlab.com/scrolliris/scrolliris-concept/commits/master
 
 ```txt
  _               _   _
@@ -23,7 +23,7 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 
 ## Repository
 
-https://gitlab.com/scrolliris/scrolliris-demo
+https://gitlab.com/scrolliris/scrolliris-concept
 
 
 ## Requirements
@@ -254,7 +254,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 `AGPL-3.0`
 
 ```
-Scrolliris Demo
+Scrolliris Concept
 Copyright (c) 2017 Lupine Software LLC
 
 This is free software: You can redistribute it and/or modify
