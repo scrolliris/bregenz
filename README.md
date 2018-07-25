@@ -30,7 +30,7 @@ https://gitlab.com/scrolliris/scrolliris-concept
 
 * Python `3.5.4` (or `>= 2.7.14`)
 * Node.js `8.9.0` (npm `>= 5.6.0`, for build assets)
-* [Scrolliris Concept Docs](https://gitlab.com/scrolliris/scrolliris-concept-docs) as git subtree
+* [Scrolliris Concept Documentation](https://gitlab.com/scrolliris/scrolliris-concept-documentation) as git subtree
 
 
 ## Integrations
@@ -63,15 +63,15 @@ https://gitlab.com/scrolliris/scrolliris-concept
 
 #### Ettiswil
 
-See article project [Scrolliris Concept Docs](
-https://gitlab.com/scrolliris/scrolliris-concept-docs) (Ettiswil).
+See article project [Scrolliris Concept Documentation](
+https://gitlab.com/scrolliris/scrolliris-concept-documentation) (Ettiswil).
 
 Don't commit directly the changes on above article project into this repo.
 
 ```zsh
 : setup `doc`
-% git remote add concept-docs https://gitlab.com/scrolliris/scrolliris-concept-docs.git
-% git subtree add --prefix doc/article concept-docs master
+% git remote add concept-documentation https://gitlab.com/scrolliris/scrolliris-concept-documentation.git
+% git subtree add --prefix doc/article concept-documentation master
 
 : synchronize with updates into specified branch
 % git pull -s subtree -Xsubtree=doc/article ettiswil master
