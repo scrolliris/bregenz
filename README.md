@@ -1,9 +1,12 @@
-# Willisau
+# Scrolliris Demo
 
-`/víliʒau/`
+Code Name: `Willisau /víliʒau/`
 
 [![pipeline status][pipeline]][commit] [![coverage report][coverage]][commit]
 
+[pipeline]: https://gitlab.com/scrolliris/scrolliris-demo/badges/master/build.svg
+[coverage]: https://gitlab.com/scrolliris/scrolliris-demo/badges/master/coverage.svg
+[commit]: https://gitlab.com/scrolliris/scrolliris-demo/commits/master
 
 ```txt
  _               _   _
@@ -20,14 +23,14 @@ The website of [https://try.scrolliris.com/](https://try.scrolliris.com/).
 
 ## Repository
 
-https://gitlab.com/scrolliris/willisau
+https://gitlab.com/scrolliris/scrolliris-demo
 
 
 ## Requirements
 
 * Python `3.5.4` (or `>= 2.7.14`)
 * Node.js `8.9.0` (npm `>= 5.6.0`, for build assets)
-* [Ettiswil](https://gitlab.com/scrolliris/ettiswil) as git subtree
+* [Scrolliris Concept Docs](https://gitlab.com/scrolliris/scrolliris-concept-docs) as git subtree
 
 
 ## Integrations
@@ -60,15 +63,15 @@ https://gitlab.com/scrolliris/willisau
 
 #### Ettiswil
 
-See article project [Ettiswil](
-https://gitlab.com/scrolliris/ettiswil).
+See article project [Scrolliris Concept Docs](
+https://gitlab.com/scrolliris/scrolliris-concept-docs) (Ettiswil).
 
 Don't commit directly the changes on above article project into this repo.
 
 ```zsh
 : setup `doc`
-% git remote add ettiswil https://gitlab.com/scrolliris/ettiswil.git
-% git subtree add --prefix doc/article ettiswil master
+% git remote add concept-docs https://gitlab.com/scrolliris/scrolliris-concept-docs.git
+% git subtree add --prefix doc/article concept-docs master
 
 : synchronize with updates into specified branch
 % git pull -s subtree -Xsubtree=doc/article ettiswil master
@@ -251,7 +254,7 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 `AGPL-3.0`
 
 ```
-Willisau
+Scrolliris Demo
 Copyright (c) 2017 Lupine Software LLC
 
 This is free software: You can redistribute it and/or modify
@@ -269,8 +272,3 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 ```
 
 See [LICENSE](LICENSE).
-
-
-[pipeline]: https://gitlab.com/scrolliris/willisau/badges/master/build.svg
-[coverage]: https://gitlab.com/scrolliris/willisau/badges/master/coverage.svg
-[commit]: https://gitlab.com/scrolliris/willisau/commits/master
